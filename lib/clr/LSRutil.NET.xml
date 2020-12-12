@@ -1,0 +1,533 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LSRutil.NET</name>
+    </assembly>
+    <members>
+        <member name="T:LSRutil.AI.AIData">
+            <summary>
+            Class for AI data info.
+            </summary>
+        </member>
+        <member name="T:LSRutil.MVD.MvdReader">
+            <summary>
+            Class for reading MVD files.
+            </summary>
+        </member>
+        <member name="M:LSRutil.MVD.MvdReader.ReadVideo(System.IO.Stream)">
+            <summary>
+            Reads a video from the provided stream.
+            </summary>
+            <param name="stream">The stream to read the video from</param>
+            <returns>The video as an object</returns>
+            <exception cref="T:System.IO.InvalidDataException">Thrown when the video file is formatted incorrectly.</exception>
+        </member>
+        <member name="M:LSRutil.MVD.MvdReader.ReadVideo(System.String)">
+            <summary>
+            Reads a video from the provided MVD file.
+            </summary>
+            <param name="filename">The filename of the MVD file</param>
+            <returns>The video as an object</returns>
+        </member>
+        <member name="M:LSRutil.MVD.MvdReader.ReadInt">
+            <summary>
+            Reads an integer from the stream.
+            </summary>
+            <returns>The integer</returns>
+        </member>
+        <member name="T:LSRutil.RF.RfReader">
+            <summary>
+            Class for reading RFH/RFD files.
+            </summary>
+        </member>
+        <member name="M:LSRutil.RF.RfReader.ReadArchive(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            Loads the archive from a header and data stream with specified filename.
+            </summary>
+            <param name="headerStream">The stream from the RFH file.</param>
+            <param name="dataStream">The stream from the RFD file.</param>
+            <returns>A <see cref="T:LSRutil.ResourceArchive"/> with the loaded streams' data.</returns>
+        </member>
+        <member name="M:LSRutil.RF.RfReader.ReadArchive(System.String)">
+            <summary>
+            Loads the archive from a header and data file with specified filename.
+            </summary>
+            <param name="file">The file to load from. Extensions are optional.</param>
+            <exception cref="T:System.IO.FileNotFoundException">One of the files was not found.</exception>
+            <returns>A <see cref="T:LSRutil.ResourceArchive"/> with the loaded files' data.</returns>
+        </member>
+        <member name="T:LSRutil.RF.RfWriter">
+            <summary>
+            Class for writing RFH/RFD files.
+            </summary>
+        </member>
+        <member name="M:LSRutil.RF.RfWriter.WriteArchive(LSRutil.ResourceArchive,System.IO.Stream,System.IO.Stream)">
+            <summary>
+            Saves the archive as a header and data file with specified streams.
+            </summary>
+            <param name="archive">The archive to save.</param>
+            <param name="headerStream">The stream for the RFH file being written to.</param>
+            <param name="dataStream">The stream for the RFD file being written to.</param>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:LSRutil.RF.RfWriter.WriteArchive(LSRutil.ResourceArchive,System.String)">
+            <summary>
+            Saves the archive as a header and data file with specified filename.
+            </summary>
+            <param name="archive">The archive to save.</param>
+            <param name="file">The file to save to. Extensions are optional.</param>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="T:LSRutil.Constants">
+            <summary>
+            Defines all of the static constants for the library.
+            </summary>
+        </member>
+        <member name="T:LSRutil.Constants.TrackRotation">
+            <summary>
+            Defines possible track element rotations.
+            </summary>
+        </member>
+        <member name="T:LSRutil.Constants.TrackTheme">
+            <summary>
+            Defines track themes.
+            </summary>
+        </member>
+        <member name="T:LSRutil.Constants.TrackSize">
+            <summary>
+            Defines possible track sizes.
+            </summary>
+        </member>
+        <member name="T:LSRutil.Constants.TrackTime">
+            <summary>
+            Defines track time of day.
+            </summary>
+        </member>
+        <member name="F:LSRutil.Constants.elementTable">
+            <summary>
+            A list of all possible bytes of track elements in LSR.
+            </summary>
+        </member>
+        <member name="M:LSRutil.Constants.GetElement(LSRutil.Constants.TrackTheme,System.Int32)">
+            <summary>
+            Converts normalized element ID to non-normalized element ID.
+            </summary>
+            <param name="theme">The theme of the requested element</param>
+            <param name="xid">The normalized element ID</param>
+            <returns>The non-normalized element ID</returns>
+        </member>
+        <member name="M:LSRutil.Constants.GetElement(LSRutil.Constants.TrackTheme,System.Byte)">
+            <summary>
+            Converts non-normalized element ID to normalized element ID.
+            </summary>
+            <param name="theme">The theme of the requested element</param>
+            <param name="id">The non-normalized element ID</param>
+            <returns>The normalized element ID</returns>
+        </member>
+        <member name="M:LSRutil.Constants.GetElements(System.Int32)">
+            <summary>
+            Returns all of the elements in the element table for a specific theme.
+            </summary>
+            <param name="theme">The theme of the returned elements</param>
+            <returns>A byte array of all of the elements</returns>
+        </member>
+        <member name="T:LSRutil.GridPosition">
+            <summary>
+            A simple class to define positions on the game grid.
+            </summary>
+        </member>
+        <member name="T:LSRutil.MotoVideo">
+            <summary>
+            A class consisting of <see cref="T:LSRutil.MotoVideoFrame"/> objects and metadata.
+            </summary>
+        </member>
+        <member name="F:LSRutil.MotoVideo.numFrames">
+            <summary>
+            Number of frames in the video.
+            </summary>
+        </member>
+        <member name="F:LSRutil.MotoVideo.width">
+            <summary>
+            The width of the video in pixels.
+            </summary>
+        </member>
+        <member name="F:LSRutil.MotoVideo.height">
+            <summary>
+            The height of the video in pixels.
+            </summary>
+        </member>
+        <member name="F:LSRutil.MotoVideo.bitDepth">
+            <summary>
+            The bit depth of the video.
+            </summary>
+            <remarks>
+            This value is 16 when loading official videos.
+            </remarks>
+        </member>
+        <member name="F:LSRutil.MotoVideo.frames">
+            <summary>
+            A list of frames contained in the video.
+            </summary>
+        </member>
+        <member name="M:LSRutil.MotoVideo.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Instanciates a new MotoVideo object with preset parameters.
+            </summary>
+            <param name="numFrames">The number of frames in the video.</param>
+            <param name="width">The width of the video.</param>
+            <param name="height">The height of the video.</param>
+        </member>
+        <member name="M:LSRutil.MotoVideo.#ctor">
+            <summary>
+            Instanciates a new <see cref="T:LSRutil.MotoVideo"/>.
+            </summary>
+        </member>
+        <member name="M:LSRutil.MotoVideo.GetInfo">
+            <summary>
+            Prints information about this video to the console. This should only be used for debugging.
+            </summary>
+        </member>
+        <member name="T:LSRutil.MotoVideoFrame">
+            <summary>
+            Class representing a single frame of a <see cref="T:LSRutil.MotoVideo"/>.
+            </summary>
+        </member>
+        <member name="M:LSRutil.MotoVideoFrame.GetInfo">
+            <summary>
+            Prints information about this frame to the console. This should only be used for debugging.
+            </summary>
+        </member>
+        <member name="M:LSRutil.ResourceArchive.#ctor(System.Collections.Generic.List{LSRutil.ResourceFile})">
+            <summary>
+            Instanciates a new ResourceArchive based on a List of ResourceFiles.
+            </summary>
+            <param name="resList">a List of ResourceFiles.</param>
+            <remarks>NOTE: This assumes resources are in order from lowest to highest offset.</remarks>
+        </member>
+        <member name="M:LSRutil.ResourceArchive.#ctor">
+            <summary>
+            Instanciates a new ResourceArchive.
+            </summary>
+        </member>
+        <member name="M:LSRutil.ResourceArchive.Add(LSRutil.ResourceFile)">
+            <summary>
+            Adds a ResourceFile to the archive.
+            </summary>
+            <param name="resFile">The ResourceFile to add.</param>
+        </member>
+        <member name="M:LSRutil.ResourceArchive.Add(System.String,System.Boolean)">
+            <summary>
+            Adds a file to the archive.
+            </summary>
+            <param name="file">The file to add.</param>
+            <param name="compress">If true, compresses file with zlib.</param>
+        </member>
+        <member name="M:LSRutil.ResourceArchive.ExtractAllFiles(System.String)">
+            <summary>
+            Extracts all files in the archive to selected directory.
+            </summary>
+            <param name="directory">Directory to extract files to.</param>
+            <returns>Amount of files extracted.</returns>
+        </member>
+        <member name="F:LSRutil.Track.theme">
+            <summary>
+            The theme of the track.
+            </summary>
+        </member>
+        <member name="F:LSRutil.Track.size">
+            <summary>
+            The size of the track.
+            </summary>
+        </member>
+        <member name="F:LSRutil.Track.time">
+            <summary>
+            The track time of day.
+            </summary>
+        </member>
+        <member name="F:LSRutil.Track.elements">
+            <summary>
+            All of the TrackElements in the track.
+            </summary>
+        </member>
+        <member name="F:LSRutil.Track.playable">
+            <summary>
+            The track's playablity outside of the editor.
+            </summary>
+        </member>
+        <member name="M:LSRutil.Track.#ctor(LSRutil.Constants.TrackTheme,LSRutil.Constants.TrackSize,LSRutil.Constants.TrackTime)">
+            <summary>
+            Instanciates a new track.
+            </summary>
+            <param name="theme">The theme of the track</param>
+            <param name="size">The size of the track</param>
+            <param name="time">The track time of day</param>
+        </member>
+        <member name="M:LSRutil.Track.Add(LSRutil.TrackElement)">
+            <summary>
+            Adds a TrackElement to the track.
+            </summary>
+            <param name="element">The TrackElement to add</param>
+        </member>
+        <member name="M:LSRutil.Track.GetElements">
+            <summary>
+            Returns a list of all of the elements in a track.
+            </summary>
+            <returns>A list of TrackElements</returns>
+        </member>
+        <member name="M:LSRutil.Track.GetInfo">
+            <summary>
+            Prints information about this track to the console. This should only be used for debugging.
+            </summary>
+        </member>
+        <member name="P:LSRutil.TrackElement.id">
+            <summary>
+            The non-normalized ID, as a byte straight from the file.
+            </summary>
+        </member>
+        <member name="P:LSRutil.TrackElement.theme">
+            <summary>
+            The theme of the track element.
+            </summary>
+        </member>
+        <member name="F:LSRutil.TrackElement.rotation">
+            <summary>
+            The rotation of the track element.
+            </summary>
+        </member>
+        <member name="F:LSRutil.TrackElement.pos">
+            <summary>
+            The global position of the track element.
+            </summary>
+        </member>
+        <member name="F:LSRutil.TrackElement.mystery">
+            <summary>
+            An int, unknown purpose.
+            </summary>
+        </member>
+        <member name="P:LSRutil.TrackElement.X">
+            <summary> X value of element position, provided for ease of use. </summary>
+        </member>
+        <member name="P:LSRutil.TrackElement.Y">
+            <summary> Y value of element position, provided for ease of use. </summary>
+        </member>
+        <member name="P:LSRutil.TrackElement.Z">
+            <summary> Z value of element position, provided for ease of use. </summary>
+        </member>
+        <member name="P:LSRutil.TrackElement.xid">
+            <summary>
+            The normalized ID, from 0 to 73.
+            </summary>
+        </member>
+        <member name="M:LSRutil.TrackElement.#ctor(System.Byte,System.Int32,System.Int32,LSRutil.GridPosition)">
+            <summary>
+            Instanciates a new track element with given arguments.
+            </summary>
+            <param name="id">The ID of the track element</param>
+            <param name="theme">The theme of the track element</param>
+            <param name="rotation">The rotation of the track element</param>
+            <param name="pos">The position of the track element</param>
+        </member>
+        <member name="M:LSRutil.TrackElement.#ctor(System.Byte,System.Int32,System.Int32,System.Numerics.Vector3)">
+            <summary>
+            Instanciates a new track element with given arguments.
+            </summary>
+            <param name="id">The ID of the track element</param>
+            <param name="theme">The theme of the track element</param>
+            <param name="rotation">The rotation of the track element</param>
+            <param name="pos">The position of the track element</param>
+        </member>
+        <member name="M:LSRutil.TrackElement.#ctor">
+            <summary>
+            Instanciates a new track element.
+            </summary>
+        </member>
+        <member name="M:LSRutil.TrackElement.SetId(System.Byte)">
+            <summary>
+            Sets the normalized and non-normalized element ID at the same time.
+            </summary>
+            <param name="elementId">The non-normalized element ID</param>
+        </member>
+        <member name="M:LSRutil.TrackElement.GetInfo">
+            <summary>
+            Prints information about this element to the console. This should only be used for debugging.
+            </summary>
+        </member>
+        <member name="F:LSRutil.TRK.TrkReader.extensions">
+            <summary>
+            Enables extended features which are not supported by the official standard.
+            </summary>
+            <remarks>
+            <para>Allows you to use the <see cref="F:LSRutil.Constants.TrackSize.Mega"/> track size.</para>
+            </remarks>
+        </member>
+        <member name="M:LSRutil.TRK.TrkReader.#ctor(System.Boolean)">
+            <summary>
+            Instanciates a new TrkReader to read a track file.
+            </summary>
+            <param name="extensions">Enables extended features which are not supported by the official standard.</param>
+        </member>
+        <member name="M:LSRutil.TRK.TrkReader.ReadString(System.Int32)">
+            <summary>
+            Reads a string from the stream.
+            </summary>
+            <param name="len">The length of the string</param>
+            <returns>The string</returns>
+        </member>
+        <member name="M:LSRutil.TRK.TrkReader.ReadInt">
+            <summary>
+            Reads an integer from the stream.
+            </summary>
+            <returns>The integer</returns>
+        </member>
+        <member name="M:LSRutil.TRK.TrkReader.ReadFloat">
+            <summary>
+            Reads a float from the stream.
+            </summary>
+            <returns>The float</returns>
+        </member>
+        <member name="M:LSRutil.TRK.TrkReader.ReadHeight">
+            <summary>
+            Reads a track height from the stream.
+            </summary>
+            <returns>The track height</returns>
+        </member>
+        <member name="M:LSRutil.TRK.TrkReader.ReadElementTheme">
+            <summary>
+            Reads a track element theme from the stream.
+            </summary>
+            <returns>The track element theme</returns>
+        </member>
+        <member name="M:LSRutil.TRK.TrkReader.ReadTrack(System.IO.Stream)">
+            <summary>
+            Reads a track from the provided stream.
+            </summary>
+            <param name="stream">The stream to read the track from</param>
+            <returns>The track as an object</returns>
+            <exception cref="T:System.IO.InvalidDataException">Thrown when the track file is formatted incorrectly.</exception>
+        </member>
+        <member name="M:LSRutil.TRK.TrkReader.ReadTrack(System.String)">
+            <summary>
+            Reads a track from the provided TRK file.
+            </summary>
+            <param name="filename">The filename of the TRK file</param>
+            <returns>The track as an object</returns>
+        </member>
+        <member name="F:LSRutil.TRK.TrkWriter.extensions">
+            <summary>
+            Enables extended features which are not supported by the official standard.
+            </summary>
+            <remarks>
+            <para>Allows you to use the <see cref="F:LSRutil.Constants.TrackSize.Mega"/> track size.</para>
+            </remarks>
+        </member>
+        <member name="F:LSRutil.TRK.TrkWriter.legoHeader">
+            <summary>
+            The <a href="https://en.wikipedia.org/wiki/File_format#Magic_number">file magic</a> for TRK files.
+            </summary>
+        </member>
+        <member name="F:LSRutil.TRK.TrkWriter.trkVersion">
+            <summary>
+            The TRK file format version number.
+            </summary>
+            <remarks>
+            <para>Anything other than 5 causes a standardized implementation to crash.</para>
+            </remarks>
+        </member>
+        <member name="F:LSRutil.TRK.TrkWriter.filesize">
+            <summary>
+            The total filesize of the TRK file in bytes.
+            </summary>
+            <remarks>
+            <para>If the header has an incorrect filesize, standardized implementations will crash.</para>
+            <para>If the file is not exactly 65,576 bytes long, standardized implementations will ignore it.</para>
+            </remarks>
+        </member>
+        <member name="F:LSRutil.TRK.TrkWriter.trkPad">
+            <summary>
+            The fixed padding bytes used in the TRK format between regions of elements.
+            </summary>
+        </member>
+        <member name="M:LSRutil.TRK.TrkWriter.#ctor(System.Boolean)">
+            <summary>
+            Creates a new TrkTrkWriter to write a track file.
+            </summary>
+            <param name="extensions">Enables extended features which are not supported by the official standard.</param>
+        </member>
+        <member name="M:LSRutil.TRK.TrkWriter.WriteString(System.String)">
+            <summary>
+            Writes a string to the stream.
+            </summary>
+            <param name="str">The string to write</param>
+        </member>
+        <member name="M:LSRutil.TRK.TrkWriter.WriteData(System.Int32)">
+            <summary>
+            Writes an int to the stream.
+            </summary>
+            <param name="data">The int to write</param>
+        </member>
+        <member name="M:LSRutil.TRK.TrkWriter.WriteData(System.Single)">
+            <summary>
+            Writes a float to the stream.
+            </summary>
+            <param name="data">The float to write</param>
+        </member>
+        <member name="M:LSRutil.TRK.TrkWriter.WriteByte(System.Byte)">
+            <summary>
+            Writes a byte to the stream.
+            </summary>
+            <param name="data">The byte to write</param>
+        </member>
+        <member name="M:LSRutil.TRK.TrkWriter.WriteElement(LSRutil.TrackElement)">
+            <summary>
+            Serializes a track element and writes it to the stream.
+            </summary>
+            <param name="element">The track element to serialize</param>
+        </member>
+        <member name="M:LSRutil.TRK.TrkWriter.WriteEmptyElement">
+            <summary>
+            Writes an empty serialized element to the stream.
+            </summary>
+        </member>
+        <member name="M:LSRutil.TRK.TrkWriter.GetHeight(System.Int32)">
+            <summary>
+            Calculates the float height from the Y position of the track element.
+            </summary>
+            <param name="height">The Y position of the track element</param>
+            <returns>The float height, for serialization</returns>
+        </member>
+        <member name="M:LSRutil.TRK.TrkWriter.GetElementTheme(LSRutil.Constants.TrackTheme)">
+            <summary>
+            Calculates the serialized theme byte from the track element's theme.
+            </summary>
+            <param name="theme">The track element's theme</param>
+            <returns>The serialized theme byte</returns>
+        </member>
+        <member name="M:LSRutil.TRK.TrkWriter.WriteTrackPadding(LSRutil.Constants.TrackSize)">
+            <summary>
+            Writes the correct amount of padding to the stream depending on the track size.
+            </summary>
+            <param name="size">The track size</param>
+        </member>
+        <member name="M:LSRutil.TRK.TrkWriter.WriteTrackElements(LSRutil.Track)">
+            <summary>
+            Writes all of the track elements in a track to the stream.
+            </summary>
+            <param name="track">The track to write to the stream</param>
+            <returns>Amount of track elements written</returns>
+        </member>
+        <member name="M:LSRutil.TRK.TrkWriter.WriteTrack(LSRutil.Track,System.IO.Stream)">
+            <summary>
+            Writes a track to the provided stream.
+            </summary>
+            <param name="track">The track to write</param>
+            <param name="stream">The stream to write the track to</param>
+        </member>
+        <member name="M:LSRutil.TRK.TrkWriter.WriteTrack(LSRutil.Track,System.String)">
+            <summary>
+            Writes a track to a file with the provided filename.
+            </summary>
+            <param name="track">The track to write</param>
+            <param name="filename">The filename to write the track to</param>
+        </member>
+    </members>
+</doc>
