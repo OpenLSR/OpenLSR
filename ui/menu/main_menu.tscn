@@ -1,0 +1,149 @@
+[gd_scene load_steps=20 format=3 uid="uid://cua464htue0pc"]
+
+[ext_resource type="Script" path="res://ui/menu/main_menu.gd" id="1_63nyb"]
+[ext_resource type="Texture2D" uid="uid://bd1ioivhduh38" path="res://textures/ui/mm/fm8iback.tga" id="2_vy8rp"]
+[ext_resource type="Texture2D" uid="uid://da3v4wn8cs25d" path="res://_ref/gameplay03.png" id="3_vwauj"]
+[ext_resource type="PackedScene" uid="uid://dhug8grg22asc" path="res://ui/elements/frame.tscn" id="4_p1s1t"]
+[ext_resource type="Texture2D" uid="uid://b5dcmwkgj3ov3" path="res://textures/ui/frame/buttons/options.png" id="5_llruk"]
+[ext_resource type="Texture2D" uid="uid://d3i0t0glc2fp6" path="res://textures/ui/frame/buttons/options_pressed.png" id="6_rddwy"]
+[ext_resource type="Texture2D" uid="uid://dnyp0r40w4woj" path="res://textures/ui/frame/buttons/options_hover.png" id="7_m2kpn"]
+[ext_resource type="Texture2D" uid="uid://cgj588tprcm7w" path="res://textures/ui/frame/buttons/quit.png" id="8_biaap"]
+[ext_resource type="Texture2D" uid="uid://bk22h0xm2882j" path="res://textures/ui/frame/buttons/quit_pressed.png" id="9_ladrh"]
+[ext_resource type="Texture2D" uid="uid://djtj6ids02hwb" path="res://textures/ui/frame/buttons/quit_hover.png" id="10_a4iht"]
+[ext_resource type="Texture2D" uid="uid://dfrku1o7srwhu" path="res://textures/ui/main_menu/button_bar.png" id="11_4b5d7"]
+[ext_resource type="Texture2D" uid="uid://d38fso2a0w2bp" path="res://textures/ui/main_menu/race.png" id="12_knatd"]
+[ext_resource type="Texture2D" uid="uid://bbva11tosp73n" path="res://textures/ui/main_menu/race_pressed.png" id="13_pawkf"]
+[ext_resource type="Texture2D" uid="uid://dplnf0ljdfut6" path="res://textures/ui/main_menu/race_hover.png" id="14_7otah"]
+[ext_resource type="FontFile" uid="uid://bcux62hxfyncl" path="res://fonts/Balonxb.ttf" id="15_m32nx"]
+[ext_resource type="Texture2D" uid="uid://xfjo67vnh6bd" path="res://textures/ui/main_menu/construct.png" id="16_yi5i0"]
+[ext_resource type="Texture2D" uid="uid://b730563u2g2j8" path="res://textures/ui/main_menu/construct_pressed.png" id="17_pl143"]
+[ext_resource type="Texture2D" uid="uid://0q3tc2egogks" path="res://textures/ui/main_menu/construct_hover.png" id="18_htg3x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n13ub"]
+font = ExtResource("15_m32nx")
+font_size = 20
+
+[node name="MainMenu" type="Control"]
+texture_filter = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_63nyb")
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -9
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vy8rp")
+
+[node name="Gameplay03" type="TextureRect" parent="."]
+visible = false
+z_index = -2
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -800.0
+offset_top = -600.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_vwauj")
+
+[node name="Frame" parent="." instance=ExtResource("4_p1s1t")]
+layout_mode = 1
+focus_mode = 1
+
+[node name="OptionsButton" type="TextureButton" parent="Frame"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -57.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 57.0
+grow_horizontal = 0
+texture_normal = ExtResource("5_llruk")
+texture_pressed = ExtResource("6_rddwy")
+texture_hover = ExtResource("7_m2kpn")
+
+[node name="QuitButton" type="TextureButton" parent="Frame"]
+layout_mode = 1
+offset_right = 99.0
+offset_bottom = 99.0
+focus_neighbor_right = NodePath("../OptionsButton")
+texture_normal = ExtResource("8_biaap")
+texture_pressed = ExtResource("9_ladrh")
+texture_hover = ExtResource("10_a4iht")
+
+[node name="ModeBar" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -620.0
+offset_top = -128.0
+offset_right = -59.0
+offset_bottom = -44.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("11_4b5d7")
+
+[node name="RaceButton" type="TextureButton" parent="ModeBar"]
+layout_mode = 0
+offset_right = 84.0
+offset_bottom = 84.0
+focus_neighbor_top = NodePath("../../Frame/QuitButton")
+focus_neighbor_right = NodePath("../ConstructButton")
+texture_normal = ExtResource("12_knatd")
+texture_pressed = ExtResource("13_pawkf")
+texture_hover = ExtResource("14_7otah")
+
+[node name="RaceLabel" type="Label" parent="ModeBar/RaceButton"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 32.0
+offset_right = 273.0
+offset_bottom = 61.0
+text = "MM_MMRACE"
+label_settings = SubResource("LabelSettings_n13ub")
+vertical_alignment = 1
+
+[node name="ConstructButton" type="TextureButton" parent="ModeBar"]
+layout_mode = 0
+offset_left = 275.0
+offset_right = 359.0
+offset_bottom = 84.0
+focus_neighbor_left = NodePath("../RaceButton")
+focus_neighbor_top = NodePath("../../Frame/OptionsButton")
+focus_neighbor_right = NodePath("../RaceButton")
+texture_normal = ExtResource("16_yi5i0")
+texture_pressed = ExtResource("17_pl143")
+texture_hover = ExtResource("18_htg3x")
+
+[node name="ConstructLabel" type="Label" parent="ModeBar/ConstructButton"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 32.0
+offset_right = 273.0
+offset_bottom = 61.0
+text = "MM_MMCONSTR"
+label_settings = SubResource("LabelSettings_n13ub")
+vertical_alignment = 1
+
+[connection signal="pressed" from="Frame/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Frame/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ModeBar/RaceButton" to="." method="_on_race_button_pressed"]
+[connection signal="pressed" from="ModeBar/ConstructButton" to="." method="_on_construct_button_pressed"]

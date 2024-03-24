@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://icx6jr1r3fd6"
+path="res://.godot/imported/luwatch.wav-f783e66c8aef7b58a49f25cf7a6a78ce.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/avatars/lucky/luwatch.wav"
+dest_files=["res://.godot/imported/luwatch.wav-f783e66c8aef7b58a49f25cf7a6a78ce.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

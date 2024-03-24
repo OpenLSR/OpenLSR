@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ckkrvdprai2ug"
+path="res://.godot/imported/wrench 2hwave.wav-dcd91b37eb044fa0add306a49f2947b8.sample"
+
+[deps]
+
+source_file="res://sounds/charscrn/wrench 2hwave.wav"
+dest_files=["res://.godot/imported/wrench 2hwave.wav-dcd91b37eb044fa0add306a49f2947b8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

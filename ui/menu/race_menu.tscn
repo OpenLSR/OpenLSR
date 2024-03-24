@@ -1,0 +1,169 @@
+[gd_scene load_steps=20 format=3 uid="uid://ckeil5x2ra24b"]
+
+[ext_resource type="Script" path="res://ui/menu/race_menu.gd" id="1_0q0bh"]
+[ext_resource type="Texture2D" uid="uid://7ncfvdxetdcq" path="res://textures/ui/rm/rm8iback.tga" id="2_0n2xj"]
+[ext_resource type="PackedScene" uid="uid://bfmiqy0m77420" path="res://ui/elements/label_frame.tscn" id="3_3ddan"]
+[ext_resource type="PackedScene" uid="uid://du18yi1kptpxv" path="res://ui/elements/buttons/frame/back_button.tscn" id="4_qb1b6"]
+[ext_resource type="Texture2D" uid="uid://05mcq1jrldsa" path="res://textures/ui/rm/rm8_bars.tga" id="5_o3tmw"]
+[ext_resource type="Texture2D" uid="uid://d0udxhoaa8y0" path="res://textures/ui/rm/rm8uquick.tga" id="6_yeo8s"]
+[ext_resource type="Texture2D" uid="uid://cti81qgy2eg2x" path="res://textures/ui/rm/rm8dquick.tga" id="7_j4q4s"]
+[ext_resource type="Texture2D" uid="uid://wlfq0cpi86bt" path="res://textures/ui/rm/rm8gquick.tga" id="8_1wqv8"]
+[ext_resource type="FontFile" uid="uid://bcux62hxfyncl" path="res://fonts/Balonxb.ttf" id="9_rdoli"]
+[ext_resource type="Texture2D" uid="uid://doord28dgqmw" path="res://textures/ui/rm/rm8ucamp.tga" id="10_e078c"]
+[ext_resource type="Texture2D" uid="uid://d1xj24eny7px" path="res://textures/ui/rm/rm8dcamp.tga" id="11_ria2v"]
+[ext_resource type="Texture2D" uid="uid://dql1yjeh2it48" path="res://textures/ui/rm/rm8gcamp.tga" id="12_vwj4f"]
+[ext_resource type="Texture2D" uid="uid://oejgir08pppb" path="res://textures/ui/rm/rm8u1p.tga" id="13_kao0p"]
+[ext_resource type="Texture2D" uid="uid://d1f23fvaak6mm" path="res://textures/ui/rm/rm8d1p.tga" id="14_oqbtw"]
+[ext_resource type="Texture2D" uid="uid://gddfwtk8tmxe" path="res://textures/ui/rm/rm8g1p.tga" id="15_0bm2l"]
+[ext_resource type="Texture2D" uid="uid://b4ibv2dj6y6xg" path="res://textures/ui/rm/rm8u234p.tga" id="16_5wv3o"]
+[ext_resource type="Texture2D" uid="uid://4dxqmrarajkx" path="res://textures/ui/rm/rm8d234p.tga" id="17_0y3yp"]
+[ext_resource type="Texture2D" uid="uid://c2enovselv4jt" path="res://textures/ui/rm/rm8g234p.tga" id="18_7tbo4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s0p25"]
+font = ExtResource("9_rdoli")
+font_size = 20
+
+[node name="RaceMenu" type="Control"]
+texture_filter = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0q0bh")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0n2xj")
+
+[node name="LabelFrame" parent="." instance=ExtResource("3_3ddan")]
+layout_mode = 1
+
+[node name="Label" parent="LabelFrame/FrameLabelBox" index="0"]
+text = "RM_RMTITLE"
+
+[node name="BackButton" parent="LabelFrame" instance=ExtResource("4_qb1b6")]
+layout_mode = 1
+
+[node name="ButtonBars" type="TextureRect" parent="LabelFrame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -338.0
+offset_top = -169.0
+offset_right = 202.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_o3tmw")
+
+[node name="QuickRaceButton" type="TextureButton" parent="LabelFrame/ButtonBars"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 80.0
+offset_bottom = 81.0
+texture_normal = ExtResource("6_yeo8s")
+texture_pressed = ExtResource("7_j4q4s")
+texture_hover = ExtResource("8_1wqv8")
+
+[node name="Label" type="Label" parent="LabelFrame/ButtonBars/QuickRaceButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 82.0
+offset_top = -16.0
+offset_right = 410.0
+offset_bottom = 21.0
+grow_vertical = 2
+text = "RM_RMQUICK"
+label_settings = SubResource("LabelSettings_s0p25")
+vertical_alignment = 1
+
+[node name="CampaignButton" type="TextureButton" parent="LabelFrame/ButtonBars"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 104.0
+offset_right = 121.0
+offset_bottom = 180.0
+texture_normal = ExtResource("10_e078c")
+texture_pressed = ExtResource("11_ria2v")
+texture_hover = ExtResource("12_vwj4f")
+
+[node name="Label" type="Label" parent="LabelFrame/ButtonBars/CampaignButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 82.0
+offset_top = -15.0
+offset_right = 409.0
+offset_bottom = 22.0
+grow_vertical = 2
+text = "RM_RMCAMP"
+label_settings = SubResource("LabelSettings_s0p25")
+vertical_alignment = 1
+
+[node name="SingleplayerButton" type="TextureButton" parent="LabelFrame/ButtonBars"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 204.0
+offset_right = 160.0
+offset_bottom = 280.0
+texture_normal = ExtResource("13_kao0p")
+texture_pressed = ExtResource("14_oqbtw")
+texture_hover = ExtResource("15_0bm2l")
+
+[node name="Label" type="Label" parent="LabelFrame/ButtonBars/SingleplayerButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 82.0
+offset_top = -15.0
+offset_right = 410.0
+offset_bottom = 22.0
+grow_vertical = 2
+text = "RM_RMSINGLE"
+label_settings = SubResource("LabelSettings_s0p25")
+vertical_alignment = 1
+
+[node name="MultiplayerButton" type="TextureButton" parent="LabelFrame/ButtonBars"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 304.0
+offset_right = 200.0
+offset_bottom = 380.0
+texture_normal = ExtResource("16_5wv3o")
+texture_pressed = ExtResource("17_0y3yp")
+texture_hover = ExtResource("18_7tbo4")
+
+[node name="Label" type="Label" parent="LabelFrame/ButtonBars/MultiplayerButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 82.0
+offset_top = -15.0
+offset_right = 410.0
+offset_bottom = 22.0
+grow_vertical = 2
+text = "RM_RMMULTI"
+label_settings = SubResource("LabelSettings_s0p25")
+vertical_alignment = 1
+
+[connection signal="pressed" from="LabelFrame/BackButton" to="." method="_on_back_button_pressed"]
+
+[editable path="LabelFrame"]
+[editable path="LabelFrame/FrameLabelBox"]

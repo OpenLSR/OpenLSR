@@ -1,0 +1,108 @@
+[gd_scene load_steps=14 format=3 uid="uid://x6th7igaxp7x"]
+
+[ext_resource type="PackedScene" uid="uid://t62n27r3on31" path="res://ui/elements/singleplayer_hud.tscn" id="1_nqlp7"]
+[ext_resource type="PackedScene" uid="uid://dkdr2pp5hy0ei" path="res://ui/elements/hud/player_panel.tscn" id="2_he1ep"]
+[ext_resource type="Texture2D" uid="uid://cy3o50a4vjmpn" path="res://textures/ui/ir/pups/ir8_powjam.tga" id="2_hwwip"]
+[ext_resource type="Texture2D" uid="uid://crgg4pk7ulq7e" path="res://_ref/gameplay07.png" id="2_ntuka"]
+[ext_resource type="Texture2D" uid="uid://ch0frnd2rb6yb" path="res://textures/ui/ir/skins/ir8iskchip.tga" id="4_2ubqm"]
+[ext_resource type="Texture2D" uid="uid://bnv15ano2u0i1" path="res://textures/ui/ir/pos/ir8_pos2.tga" id="5_4mgd3"]
+[ext_resource type="Texture2D" uid="uid://bmwfiblkip7mf" path="res://textures/ui/ir/pups/ir8_powgrip.tga" id="6_tb3f3"]
+[ext_resource type="Texture2D" uid="uid://cpcnecb8gvecm" path="res://textures/ui/ir/skins/ir8iskflambo.tga" id="7_psrgx"]
+[ext_resource type="Texture2D" uid="uid://b656camus8n7w" path="res://textures/ui/ir/pos/ir8_pos3.tga" id="8_53nlq"]
+[ext_resource type="Texture2D" uid="uid://dcwmcxt8h3047" path="res://textures/ui/ir/skins/ir8isksid.tga" id="9_gy1km"]
+[ext_resource type="Texture2D" uid="uid://df6onikfhritj" path="res://textures/ui/ir/pos/ir8_pos4.tga" id="10_sl2du"]
+[ext_resource type="Texture2D" uid="uid://ddvcs8sn4slk2" path="res://textures/ui/ir/pups/ir8_powrubber.tga" id="11_yt5gp"]
+[ext_resource type="Texture2D" uid="uid://q1j28kobrg0d" path="res://textures/ui/ir/ir7_stats.tga" id="13_uyuua"]
+
+[node name="MultiplayerHud" instance=ExtResource("1_nqlp7")]
+layout_direction = 2
+offset_right = -480.0
+offset_bottom = -120.0
+
+[node name="Gameplay07" type="TextureRect" parent="." index="0"]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("2_ntuka")
+
+[node name="Position" parent="PlayerPanels/Player1" index="1"]
+visible = true
+
+[node name="PositionLabel" parent="PlayerPanels/Player1" index="2"]
+visible = false
+
+[node name="Powerup" parent="PlayerPanels/Player1" index="4"]
+texture = ExtResource("2_hwwip")
+
+[node name="Player2" parent="PlayerPanels" index="1" instance=ExtResource("2_he1ep")]
+layout_mode = 0
+offset_left = 200.0
+offset_right = 400.0
+
+[node name="Icon" parent="PlayerPanels/Player2" index="0"]
+texture = ExtResource("4_2ubqm")
+
+[node name="Position" parent="PlayerPanels/Player2" index="1"]
+visible = true
+texture = ExtResource("5_4mgd3")
+
+[node name="PositionLabel" parent="PlayerPanels/Player2" index="2"]
+visible = false
+
+[node name="LapLabel" parent="PlayerPanels/Player2" index="3"]
+text = "0/6"
+
+[node name="Powerup" parent="PlayerPanels/Player2" index="4"]
+texture = ExtResource("6_tb3f3")
+
+[node name="Player3" parent="PlayerPanels" index="2" instance=ExtResource("2_he1ep")]
+layout_mode = 0
+offset_left = 400.0
+offset_right = 600.0
+
+[node name="Icon" parent="PlayerPanels/Player3" index="0"]
+texture = ExtResource("7_psrgx")
+
+[node name="Position" parent="PlayerPanels/Player3" index="1"]
+visible = true
+texture = ExtResource("8_53nlq")
+
+[node name="PositionLabel" parent="PlayerPanels/Player3" index="2"]
+visible = false
+
+[node name="LapLabel" parent="PlayerPanels/Player3" index="3"]
+text = "4/5"
+
+[node name="Player4" parent="PlayerPanels" index="3" instance=ExtResource("2_he1ep")]
+layout_mode = 0
+offset_left = 600.0
+offset_right = 800.0
+
+[node name="Icon" parent="PlayerPanels/Player4" index="0"]
+texture = ExtResource("9_gy1km")
+
+[node name="Position" parent="PlayerPanels/Player4" index="1"]
+visible = true
+texture = ExtResource("10_sl2du")
+
+[node name="PositionLabel" parent="PlayerPanels/Player4" index="2"]
+visible = false
+
+[node name="LapLabel" parent="PlayerPanels/Player4" index="3"]
+text = "1/2"
+
+[node name="Powerup" parent="PlayerPanels/Player4" index="4"]
+texture = ExtResource("11_yt5gp")
+
+[node name="Ir7Stats" type="TextureButton" parent="." index="5"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 125.0
+offset_right = 640.0
+offset_bottom = 513.0
+texture_normal = ExtResource("13_uyuua")
+
+[editable path="PlayerPanels/Player1"]
+[editable path="PlayerPanels/Player2"]
+[editable path="PlayerPanels/Player3"]
+[editable path="PlayerPanels/Player4"]

@@ -1,0 +1,53 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="OpenLSR"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://audio_layout.tres"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+mouse_cursor/custom_image="res://textures/ui/cursors/hand.png"
+mouse_cursor/custom_image_hotspot=Vector2(10, 5)
+mouse_cursor/tooltip_position_offset=Vector2(45, 60)
+
+[dotnet]
+
+project/assembly_name="OpenLSR"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/MonoBuildToggler/plugin.cfg", "res://addons/lsr-mvd-importer/plugin.cfg")
+
+[internationalization]
+
+locale/translation_remaps={
+"res://textures/ui/main_menu/button_bar.png": PackedStringArray("res://i18n/textures/ja/ui/main_menu/button_bar.png:ja"),
+"res://textures/ui/op/controls/op8dvidhi.tga": PackedStringArray("res://i18n/textures/en/ui/op/controls/op8dvidhi.tga:en", "res://i18n/textures/ja/ui/op/controls/op8dvidhi.tga:ja"),
+"res://textures/ui/op/controls/op8dvidlo.tga": PackedStringArray("res://i18n/textures/en/ui/op/controls/op8dvidlo.tga:en", "res://i18n/textures/ja/ui/op/controls/op8dvidlo.tga:ja"),
+"res://textures/ui/op/controls/op8dvidmd.tga": PackedStringArray("res://i18n/textures/en/ui/op/controls/op8dvidmd.tga:en", "res://i18n/textures/ja/ui/op/controls/op8dvidmd.tga:ja"),
+"res://textures/ui/op/controls/op8gvidhi.tga": PackedStringArray("res://i18n/textures/en/ui/op/controls/op8gvidhi.tga:en", "res://i18n/textures/ja/ui/op/controls/op8gvidhi.tga:ja"),
+"res://textures/ui/op/controls/op8gvidlo.tga": PackedStringArray("res://i18n/textures/en/ui/op/controls/op8gvidlo.tga:en", "res://i18n/textures/ja/ui/op/controls/op8gvidlo.tga:ja"),
+"res://textures/ui/op/controls/op8gvidmd.tga": PackedStringArray("res://i18n/textures/en/ui/op/controls/op8gvidmd.tga:en", "res://i18n/textures/ja/ui/op/controls/op8gvidmd.tga:ja"),
+"res://textures/ui/op/controls/op8uvidhi.tga": PackedStringArray("res://i18n/textures/en/ui/op/controls/op8uvidhi.tga:en", "res://i18n/textures/ja/ui/op/controls/op8uvidhi.tga:ja"),
+"res://textures/ui/op/controls/op8uvidlo.tga": PackedStringArray("res://i18n/textures/en/ui/op/controls/op8uvidlo.tga:en", "res://i18n/textures/ja/ui/op/controls/op8uvidlo.tga:ja"),
+"res://textures/ui/op/controls/op8uvidmd.tga": PackedStringArray("res://i18n/textures/en/ui/op/controls/op8uvidmd.tga:en", "res://i18n/textures/ja/ui/op/controls/op8uvidmd.tga:ja"),
+"res://textures/ui/rm/rm8_bars.tga": PackedStringArray("res://i18n/textures/ja/ui/rm/rm8_bars.tga:ja")
+}
+locale/translations=PackedStringArray("res://i18n/text/da.da.translation", "res://i18n/text/de.de.translation", "res://i18n/text/en.en.translation", "res://i18n/text/es.es.translation", "res://i18n/text/fr.fr.translation", "res://i18n/text/it.it.translation", "res://i18n/text/nl.nl.translation", "res://i18n/text/no.nb.translation", "res://i18n/text/pt.pt.translation", "res://i18n/text/pt_BR.pt_BR.translation", "res://i18n/text/ru.ru.translation", "res://i18n/text/sv.sv.translation", "res://i18n/text/ja.ja.translation", "res://i18n/text/he.he.translation")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://coyqmcxlm66a3"
+path="res://.godot/imported/wrjump.wav-33d04c543a64327d9098ce11c1b7378b.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/avatars/wrench/wrjump.wav"
+dest_files=["res://.godot/imported/wrjump.wav-33d04c543a64327d9098ce11c1b7378b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,4 @@
+{ HappyTaunt      = 0000-0041 }
+{ AngryTaunt      = 0042-0080 }
+{ ImpactTaunt     = 0081-0114 }
+{ Special         = 0115-0147 }

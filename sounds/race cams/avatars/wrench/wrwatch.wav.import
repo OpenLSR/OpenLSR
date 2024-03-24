@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bl4ygtnq6rnuy"
+path="res://.godot/imported/wrwatch.wav-3d0824382e8aaeda6705dfa5caa4afa7.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/avatars/wrench/wrwatch.wav"
+dest_files=["res://.godot/imported/wrwatch.wav-3d0824382e8aaeda6705dfa5caa4afa7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

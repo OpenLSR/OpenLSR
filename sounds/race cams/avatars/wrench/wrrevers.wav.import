@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qglbnbcwahtf"
+path="res://.godot/imported/wrrevers.wav-492dd6a1d48335dac57a6b5507d6d5d4.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/avatars/wrench/wrrevers.wav"
+dest_files=["res://.godot/imported/wrrevers.wav-492dd6a1d48335dac57a6b5507d6d5d4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

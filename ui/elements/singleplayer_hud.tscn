@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://t62n27r3on31"]
+
+[ext_resource type="Script" path="res://min_size.gd" id="1_7x1dr"]
+[ext_resource type="Texture2D" uid="uid://1hbku30jvrb6" path="res://textures/ui/ir/ir8_pipe.tga" id="3_i23be"]
+[ext_resource type="PackedScene" uid="uid://dkdr2pp5hy0ei" path="res://ui/elements/hud/player_panel.tscn" id="4_31a3d"]
+[ext_resource type="Texture2D" uid="uid://cclvafh0wwrlm" path="res://textures/ui/ir/tm/irtntmon.tga" id="5_hpa44"]
+[ext_resource type="Texture2D" uid="uid://c0x4mfpkme1st" path="res://textures/ui/ir/tl/ir7_traflite.tga" id="7_moagw"]
+[ext_resource type="Texture2D" uid="uid://cstoo7f1mkav" path="res://textures/ui/ir/tl/ir7_redlite.tga" id="8_if6lw"]
+[ext_resource type="Texture2D" uid="uid://cnlrv4yg52u2p" path="res://textures/ui/ir/tl/ir7_yellowlite.tga" id="9_hmxlx"]
+[ext_resource type="Texture2D" uid="uid://c0gaur7oaqcgc" path="res://textures/ui/ir/tl/ir7_greenlite.tga" id="10_hoici"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ug4l"]
+
+[node name="SingleplayerHud" type="Control"]
+texture_filter = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7x1dr")
+
+[node name="Pipe" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+texture = ExtResource("3_i23be")
+stretch_mode = 1
+
+[node name="PlayerPanels" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 800.0
+offset_bottom = 90.0
+
+[node name="Player1" parent="PlayerPanels" instance=ExtResource("4_31a3d")]
+layout_mode = 0
+
+[node name="ReactionMonitor" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -122.0
+offset_right = 120.0
+offset_bottom = -2.0
+grow_vertical = 0
+texture = ExtResource("5_hpa44")
+
+[node name="ReactionAnimation" type="AnimatedSprite2D" parent="ReactionMonitor"]
+position = Vector2(12, 7)
+sprite_frames = SubResource("SpriteFrames_7ug4l")
+
+[node name="TrafficLight" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -158.0
+offset_bottom = 118.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("7_moagw")
+
+[node name="RedLight" type="TextureRect" parent="TrafficLight"]
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 89.0
+offset_bottom = 99.0
+texture = ExtResource("8_if6lw")
+
+[node name="YellowLight" type="TextureRect" parent="TrafficLight"]
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = 100.0
+offset_right = 89.0
+offset_bottom = 179.0
+texture = ExtResource("9_hmxlx")
+
+[node name="GreenLight" type="TextureRect" parent="TrafficLight"]
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = 180.0
+offset_right = 89.0
+offset_bottom = 259.0
+texture = ExtResource("10_hoici")
+
+[editable path="PlayerPanels/Player1"]

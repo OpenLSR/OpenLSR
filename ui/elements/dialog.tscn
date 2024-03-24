@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://cs7dqifofu3hk"]
+
+[ext_resource type="Texture2D" uid="uid://b8l00c233dmqu" path="res://textures/ui/su/su8_pozbig.tga" id="1_1bpcr"]
+[ext_resource type="Texture2D" uid="uid://buklhndh0i1bm" path="res://textures/ui/su/su8upozok.tga" id="2_p8ep5"]
+[ext_resource type="Texture2D" uid="uid://j6jswic8cyw2" path="res://textures/ui/su/su8dpozok.tga" id="3_xa2ng"]
+[ext_resource type="Texture2D" uid="uid://cvq2mffd8l8nx" path="res://textures/ui/su/su8gpozok.tga" id="4_1dcjc"]
+[ext_resource type="Texture2D" uid="uid://c2che3s3u5cfg" path="res://textures/ui/su/su8upozno.tga" id="5_xs1cx"]
+[ext_resource type="Texture2D" uid="uid://bt6qfr4fm81vt" path="res://textures/ui/su/su8dpozno.tga" id="6_gvnft"]
+[ext_resource type="Texture2D" uid="uid://b113y3c4k7spd" path="res://textures/ui/su/su8gpozno.tga" id="7_cv6fa"]
+[ext_resource type="FontFile" uid="uid://bcux62hxfyncl" path="res://fonts/Balonxb.ttf" id="8_17rto"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_534om"]
+font = ExtResource("8_17rto")
+font_size = 20
+
+[node name="Dialog" type="Control"]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(404, 304)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -152.0
+offset_right = 202.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1bpcr")
+patch_margin_left = 201
+patch_margin_top = 69
+patch_margin_right = 201
+patch_margin_bottom = 45
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="YesButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 75.0
+offset_right = 85.0
+offset_bottom = 145.0
+texture_normal = ExtResource("2_p8ep5")
+texture_pressed = ExtResource("3_xa2ng")
+texture_hover = ExtResource("4_1dcjc")
+
+[node name="NoButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -85.0
+offset_top = 75.0
+offset_right = -15.0
+offset_bottom = 145.0
+texture_normal = ExtResource("5_xs1cx")
+texture_pressed = ExtResource("6_gvnft")
+texture_hover = ExtResource("7_cv6fa")
+
+[node name="DialogTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = -186.0
+offset_top = -125.0
+offset_bottom = -96.0
+text = "MM_MMQUTTTL"
+label_settings = SubResource("LabelSettings_534om")
+vertical_alignment = 1
+
+[node name="DialogText" type="Label" parent="."]
+layout_mode = 0
+offset_left = -186.0
+offset_top = -83.0
+offset_right = 187.0
+offset_bottom = 76.0
+text = "MM_MMQUTTXT"
+label_settings = SubResource("LabelSettings_534om")

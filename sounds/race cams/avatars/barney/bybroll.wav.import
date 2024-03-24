@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://be781lt7jxsfo"
+path="res://.godot/imported/bybroll.wav-e9168562acaa3a8581d37936924edd75.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/avatars/barney/bybroll.wav"
+dest_files=["res://.godot/imported/bybroll.wav-e9168562acaa3a8581d37936924edd75.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

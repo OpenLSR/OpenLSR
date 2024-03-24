@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4uoyrkqvrnc3"
+path="res://.godot/imported/chaccel.wav-6e9d1a1abc725eb9da3c28ca2355594c.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/avatars/chip/chaccel.wav"
+dest_files=["res://.godot/imported/chaccel.wav-6e9d1a1abc725eb9da3c28ca2355594c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

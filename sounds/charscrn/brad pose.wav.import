@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b57cvkfuejpv"
+path="res://.godot/imported/brad pose.wav-46d30d5faf889568726a66f0a286c6a6.sample"
+
+[deps]
+
+source_file="res://sounds/charscrn/brad pose.wav"
+dest_files=["res://.godot/imported/brad pose.wav-46d30d5faf889568726a66f0a286c6a6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

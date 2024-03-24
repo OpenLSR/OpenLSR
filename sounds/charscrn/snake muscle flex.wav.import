@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cwp7xf1vlcvc3"
+path="res://.godot/imported/snake muscle flex.wav-f21b9a83a95d3f126444e532ff02581c.sample"
+
+[deps]
+
+source_file="res://sounds/charscrn/snake muscle flex.wav"
+dest_files=["res://.godot/imported/snake muscle flex.wav-f21b9a83a95d3f126444e532ff02581c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

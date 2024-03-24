@@ -1,0 +1,15 @@
+[remap]
+
+importer="openlsr.mvd"
+type="SpriteFrames"
+uid="uid://dsyy0te6oha43"
+path="res://.godot/imported/snake.mvd-b98160fca9480113fa0f6f7a4f220bb5.res"
+
+[deps]
+
+source_file="res://videos/mvd/snake.mvd"
+dest_files=["res://.godot/imported/snake.mvd-b98160fca9480113fa0f6f7a4f220bb5.res"]
+
+[params]
+
+myOption=false

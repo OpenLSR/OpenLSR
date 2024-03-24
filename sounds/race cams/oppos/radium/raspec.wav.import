@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crywf6gy0a6gp"
+path="res://.godot/imported/raspec.wav-5c0c25760c9cc53669263d0332f6a2eb.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/oppos/radium/raspec.wav"
+dest_files=["res://.godot/imported/raspec.wav-5c0c25760c9cc53669263d0332f6a2eb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

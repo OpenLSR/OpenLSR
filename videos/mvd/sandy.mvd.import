@@ -1,0 +1,15 @@
+[remap]
+
+importer="openlsr.mvd"
+type="SpriteFrames"
+uid="uid://6db7yxdax5ck"
+path="res://.godot/imported/sandy.mvd-f4211161c40badd83119659c5faa256b.res"
+
+[deps]
+
+source_file="res://videos/mvd/sandy.mvd"
+dest_files=["res://.godot/imported/sandy.mvd-f4211161c40badd83119659c5faa256b.res"]
+
+[params]
+
+myOption=false

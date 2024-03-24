@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://yrnivgyns0m1"]
+
+[ext_resource type="Script" path="res://lsrutil_test.cs" id="1_m3bf8"]
+
+[node name="LSRutilTest" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+focus_mode = 2
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "wow bro that's crazy"
+script = ExtResource("1_m3bf8")
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]

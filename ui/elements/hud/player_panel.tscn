@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkdr2pp5hy0ei"]
+
+[ext_resource type="Texture2D" uid="uid://d0ikwvmenihj2" path="res://textures/ui/ir/ir8_panel.tga" id="1_aumal"]
+[ext_resource type="Texture2D" uid="uid://t72jbct7vd7i" path="res://textures/ui/ir/skins/ir8iskmrx.tga" id="2_4wi4i"]
+[ext_resource type="Texture2D" uid="uid://bui2rpcuctg6q" path="res://textures/ui/ir/pos/ir8_pos1.tga" id="3_lxg5a"]
+[ext_resource type="FontFile" uid="uid://bcux62hxfyncl" path="res://fonts/Balonxb.ttf" id="4_7j27a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pkab6"]
+font = ExtResource("4_7j27a")
+font_size = 87
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_litfs"]
+font = ExtResource("4_7j27a")
+font_size = 18
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="PlayerPanel" type="TextureRect"]
+texture_filter = 3
+offset_right = 200.0
+offset_bottom = 90.0
+texture = ExtResource("1_aumal")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 15.0
+offset_right = 85.0
+offset_bottom = 80.0
+texture = ExtResource("2_4wi4i")
+
+[node name="Position" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 88.0
+offset_top = 13.0
+offset_right = 136.0
+offset_bottom = 83.0
+texture = ExtResource("3_lxg5a")
+
+[node name="PositionLabel" type="Label" parent="."]
+editor_description = "Unused for now, until I figure out how to position it based on the digit displayed"
+layout_mode = 0
+offset_left = 97.0
+offset_top = -6.0
+offset_right = 137.0
+offset_bottom = 99.0
+text = "1"
+label_settings = SubResource("LabelSettings_pkab6")
+
+[node name="LapLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 13.0
+offset_right = 171.0
+offset_bottom = 35.0
+text = "2/3"
+label_settings = SubResource("LabelSettings_litfs")
+horizontal_alignment = 2
+
+[node name="Powerup" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 42.0
+offset_right = 176.0
+offset_bottom = 78.0

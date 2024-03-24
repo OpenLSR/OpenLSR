@@ -1,0 +1,15 @@
+[remap]
+
+importer="openlsr.mvd"
+type="SpriteFrames"
+uid="uid://crr1be361ijpm"
+path="res://.godot/imported/barney.mvd-62cc59b82b1d66a27d6a51489ac4767c.res"
+
+[deps]
+
+source_file="res://videos/mvd/barney.mvd"
+dest_files=["res://.godot/imported/barney.mvd-62cc59b82b1d66a27d6a51489ac4767c.res"]
+
+[params]
+
+myOption=false

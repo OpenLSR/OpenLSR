@@ -1,0 +1,228 @@
+[gd_scene load_steps=26 format=3 uid="uid://dfim2umu2wup8"]
+
+[ext_resource type="Script" path="res://min_size.gd" id="1_b8a21"]
+[ext_resource type="Texture2D" uid="uid://dwlcj0bbo3qwo" path="res://textures/ui/su/su8_back.tga" id="2_2uhbq"]
+[ext_resource type="Texture2D" uid="uid://dds3xhmj7m1as" path="res://_ref/gameplay09.png" id="3_06mqa"]
+[ext_resource type="PackedScene" uid="uid://cwru0sq8daajy" path="res://ui/elements/frame_no_right.tscn" id="4_6fu8h"]
+[ext_resource type="Texture2D" uid="uid://bak6p8m0drqx0" path="res://textures/ui/cs8_panel.png" id="5_4y12l"]
+[ext_resource type="Texture2D" uid="uid://cc867yk4nr5ux" path="res://textures/ui/cs/cs8uskflambo.tga" id="6_0k7fi"]
+[ext_resource type="Texture2D" uid="uid://djkas6bw35pss" path="res://textures/ui/cs/cs8dskflambo.tga" id="7_pwowl"]
+[ext_resource type="Texture2D" uid="uid://ug1rv468hj0a" path="res://textures/ui/cs/cs8gskflambo.tga" id="8_oe58u"]
+[ext_resource type="Texture2D" uid="uid://ccye0viukju5" path="res://textures/ui/cs/cs8xskflambo.tga" id="9_eu5vn"]
+[ext_resource type="Texture2D" uid="uid://clajbkcdl7usx" path="res://textures/ui/su/chars/su8iflambo.tga" id="10_fs035"]
+[ext_resource type="Texture2D" uid="uid://0kaogy8r2yl7" path="res://textures/ui/pr/pr8ugo.tga" id="11_h804h"]
+[ext_resource type="Texture2D" uid="uid://bjcii3b21qdwx" path="res://textures/ui/pr/pr8dgo.tga" id="12_yl1kc"]
+[ext_resource type="Texture2D" uid="uid://inqc5vfjmkiu" path="res://textures/ui/pr/pr8ggo.tga" id="13_umdkv"]
+[ext_resource type="Texture2D" uid="uid://cdgukb6nt3ts1" path="res://textures/ui/cs/cs8uprint.tga" id="14_cij8q"]
+[ext_resource type="Texture2D" uid="uid://0mtktbmfeepe" path="res://textures/ui/cs/cs8dprint.tga" id="15_apmxn"]
+[ext_resource type="Texture2D" uid="uid://b6duar354jp32" path="res://textures/ui/cs/cs8gprint.tga" id="16_0sfq0"]
+[ext_resource type="Texture2D" uid="uid://bw76ep2t7ugso" path="res://textures/ui/cs/cs8xprint.tga" id="17_nvl2e"]
+[ext_resource type="PackedScene" uid="uid://du18yi1kptpxv" path="res://ui/elements/buttons/frame/back_button.tscn" id="18_chf76"]
+[ext_resource type="PackedScene" uid="uid://dgqubq3v05bct" path="res://ui/elements/frame_label.tscn" id="19_byoef"]
+[ext_resource type="Texture2D" uid="uid://bajqmsfn00gk8" path="res://textures/ui/cs/cs7iflambo1.tga" id="20_14n7g"]
+[ext_resource type="Texture2D" uid="uid://b3rho6rv2rbka" path="res://textures/ui/cs/cs7iflambo2.tga" id="21_7dn6s"]
+[ext_resource type="Texture2D" uid="uid://bygqyer1ff68u" path="res://textures/ui/cs/cs7_vidframe.tga" id="22_frea5"]
+[ext_resource type="VideoStream" path="res://videos/cs/baron.ogv" id="23_58xl3"]
+[ext_resource type="FontFile" uid="uid://bcux62hxfyncl" path="res://fonts/Balonxb.ttf" id="24_7qj3d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s0p25"]
+font = ExtResource("24_7qj3d")
+font_size = 20
+
+[node name="CharacterSelect" type="Control"]
+texture_filter = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b8a21")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2uhbq")
+
+[node name="Gameplay09" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("3_06mqa")
+
+[node name="FrameNoRight" parent="." instance=ExtResource("4_6fu8h")]
+custom_minimum_size = Vector2(700, 600)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+offset_right = -100.0
+grow_horizontal = 2
+
+[node name="CharacterSelectPanel" type="NinePatchRect" parent="FrameNoRight"]
+custom_minimum_size = Vector2(210, 600)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_right = 100.0
+grow_vertical = 2
+texture = ExtResource("5_4y12l")
+patch_margin_top = 240
+patch_margin_bottom = 200
+
+[node name="CharacterSwitchButton" type="TextureButton" parent="FrameNoRight/CharacterSelectPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.0
+offset_top = 145.0
+offset_right = -50.0
+offset_bottom = 225.0
+grow_horizontal = 0
+texture_normal = ExtResource("6_0k7fi")
+texture_pressed = ExtResource("7_pwowl")
+texture_hover = ExtResource("8_oe58u")
+texture_disabled = ExtResource("9_eu5vn")
+
+[node name="CharacterPortrait" type="TextureRect" parent="FrameNoRight/CharacterSelectPanel/CharacterSwitchButton"]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -105.0
+offset_right = 110.0
+texture = ExtResource("10_fs035")
+
+[node name="GoButton" type="TextureButton" parent="FrameNoRight/CharacterSelectPanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -190.0
+offset_right = -30.0
+offset_bottom = -95.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("11_h804h")
+texture_pressed = ExtResource("12_yl1kc")
+texture_hover = ExtResource("13_umdkv")
+
+[node name="PrintButton" type="TextureButton" parent="FrameNoRight/CharacterSelectPanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -115.0
+offset_top = -80.0
+offset_right = -65.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+disabled = true
+texture_normal = ExtResource("14_cij8q")
+texture_pressed = ExtResource("15_apmxn")
+texture_hover = ExtResource("16_0sfq0")
+texture_disabled = ExtResource("17_nvl2e")
+
+[node name="BackButton" parent="FrameNoRight" instance=ExtResource("18_chf76")]
+layout_mode = 0
+
+[node name="FrameLabelBox" parent="FrameNoRight" instance=ExtResource("19_byoef")]
+layout_mode = 1
+
+[node name="Label" parent="FrameNoRight/FrameLabelBox" index="0"]
+text = "CSTITLE"
+
+[node name="CharacterPreview1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -193.0
+offset_right = -132.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_14n7g")
+
+[node name="CharacterPreview2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = 7.0
+offset_right = -132.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_7dn6s")
+
+[node name="ChracterVideoFrame" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = -193.0
+offset_right = 178.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_frea5")
+
+[node name="CharacterVideo" type="VideoStreamPlayer" parent="ChracterVideoFrame"]
+z_index = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 250.0
+offset_bottom = 330.0
+stream = ExtResource("23_58xl3")
+autoplay = true
+
+[node name="CharacterStill" type="TextureRect" parent="ChracterVideoFrame/CharacterVideo"]
+editor_description = "TODO: this is a workaround, figure out how to get VideoStreamPlayer to display last frame in video."
+z_index = -1
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 320.0
+
+[node name="CharacterName" type="Label" parent="ChracterVideoFrame"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.5
+anchor_right = 0.96
+anchor_bottom = 0.5
+offset_left = -0.4
+offset_top = 138.0
+offset_right = 0.399948
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DIFLAMBO"
+label_settings = SubResource("LabelSettings_s0p25")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[editable path="FrameNoRight/FrameLabelBox"]

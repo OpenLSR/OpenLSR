@@ -1,0 +1,15 @@
+[remap]
+
+importer="openlsr.mvd"
+type="SpriteFrames"
+uid="uid://dn0qhcnriw022"
+path="res://.godot/imported/wrench.mvd-be2f07f5481c822516471355db09fc75.res"
+
+[deps]
+
+source_file="res://videos/mvd/wrench.mvd"
+dest_files=["res://.godot/imported/wrench.mvd-be2f07f5481c822516471355db09fc75.res"]
+
+[params]
+
+myOption=false

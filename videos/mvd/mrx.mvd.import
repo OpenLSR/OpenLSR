@@ -1,0 +1,15 @@
+[remap]
+
+importer="openlsr.mvd"
+type="SpriteFrames"
+uid="uid://dtm46yot70qws"
+path="res://.godot/imported/mrx.mvd-666859908518db345166993944803251.res"
+
+[deps]
+
+source_file="res://videos/mvd/mrx.mvd"
+dest_files=["res://.godot/imported/mrx.mvd-666859908518db345166993944803251.res"]
+
+[params]
+
+myOption=false

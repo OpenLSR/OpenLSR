@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b3wbigip2x3qg"
+path="res://.godot/imported/brhappy.wav-b364e32e0210f34f010e141f5e88d1b5.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/oppos/brad/brhappy.wav"
+dest_files=["res://.godot/imported/brhappy.wav-b364e32e0210f34f010e141f5e88d1b5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qtdkcwa1dq4t"
+path="res://.godot/imported/sahappy.wav-848c391ec07ba3519a051402ddf1e63b.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/oppos/sandy/sahappy.wav"
+dest_files=["res://.godot/imported/sahappy.wav-848c391ec07ba3519a051402ddf1e63b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

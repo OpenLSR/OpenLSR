@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dj0jllsewdrbj"
+path="res://.godot/imported/radium head turn.wav-ec3e380ac853a12ceb8d755b4358cbbc.sample"
+
+[deps]
+
+source_file="res://sounds/charscrn/radium head turn.wav"
+dest_files=["res://.godot/imported/radium head turn.wav-ec3e380ac853a12ceb8d755b4358cbbc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

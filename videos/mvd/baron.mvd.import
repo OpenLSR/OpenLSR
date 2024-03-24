@@ -1,0 +1,15 @@
+[remap]
+
+importer="openlsr.mvd"
+type="SpriteFrames"
+uid="uid://cot2g0eyxoxvj"
+path="res://.godot/imported/baron.mvd-9f0f4229de1d8f476469fa6e6a82e3b6.res"
+
+[deps]
+
+source_file="res://videos/mvd/baron.mvd"
+dest_files=["res://.godot/imported/baron.mvd-9f0f4229de1d8f476469fa6e6a82e3b6.res"]
+
+[params]
+
+myOption=false

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxgoxx0pqo4wl"
+path="res://.godot/imported/wraccel.wav-96baf6c6f1a80a420efad356657ed79a.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/avatars/wrench/wraccel.wav"
+dest_files=["res://.godot/imported/wraccel.wav-96baf6c6f1a80a420efad356657ed79a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

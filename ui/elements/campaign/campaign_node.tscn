@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://b478vux3rtjk6"]
+
+[ext_resource type="Texture2D" uid="uid://dy4xwy6xe5unf" path="res://textures/ui/campaign/node.png" id="1_3ddc1"]
+[ext_resource type="Texture2D" uid="uid://djogxvpykum4u" path="res://textures/ui/campaign/node_hover.png" id="2_vhvg1"]
+[ext_resource type="Texture2D" uid="uid://d0f6328qgd6wr" path="res://textures/ui/campaign/node_disabled.png" id="3_5kdt0"]
+
+[node name="CampaignNode1" type="TextureButton"]
+offset_right = 32.0
+offset_bottom = 48.0
+texture_normal = ExtResource("1_3ddc1")
+texture_hover = ExtResource("2_vhvg1")
+texture_disabled = ExtResource("3_5kdt0")

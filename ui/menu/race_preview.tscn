@@ -1,0 +1,356 @@
+[gd_scene load_steps=37 format=3 uid="uid://c158hh1xis6xb"]
+
+[ext_resource type="Script" path="res://min_size.gd" id="1_dltaw"]
+[ext_resource type="Texture2D" uid="uid://dwlcj0bbo3qwo" path="res://textures/ui/su/su8_back.tga" id="2_oitj7"]
+[ext_resource type="PackedScene" uid="uid://cwru0sq8daajy" path="res://ui/elements/frame_no_right.tscn" id="3_mctgo"]
+[ext_resource type="Texture2D" uid="uid://cgjudn7g2t4ug" path="res://textures/ui/pr8_panel.png" id="4_qis8w"]
+[ext_resource type="Texture2D" uid="uid://0kaogy8r2yl7" path="res://textures/ui/pr/pr8ugo.tga" id="5_f5h86"]
+[ext_resource type="Texture2D" uid="uid://bjcii3b21qdwx" path="res://textures/ui/pr/pr8dgo.tga" id="6_nin0o"]
+[ext_resource type="Texture2D" uid="uid://inqc5vfjmkiu" path="res://textures/ui/pr/pr8ggo.tga" id="7_b7fhf"]
+[ext_resource type="PackedScene" uid="uid://du18yi1kptpxv" path="res://ui/elements/buttons/frame/back_button.tscn" id="8_w8laj"]
+[ext_resource type="PackedScene" uid="uid://dgqubq3v05bct" path="res://ui/elements/frame_label.tscn" id="9_kxn32"]
+[ext_resource type="FontFile" uid="uid://bcux62hxfyncl" path="res://fonts/Balonxb.ttf" id="10_3y65r"]
+[ext_resource type="Texture2D" uid="uid://c72rix8vailkv" path="res://textures/ui/pr/pr8_dpanel.tga" id="11_l7ao2"]
+[ext_resource type="Texture2D" uid="uid://deyxwi8v7ubu2" path="res://textures/ui/pr/pr8uwho.tga" id="12_mgykp"]
+[ext_resource type="Texture2D" uid="uid://b5vr2uxoxou8g" path="res://textures/ui/pr/pr8dwho.tga" id="13_lyy2p"]
+[ext_resource type="Texture2D" uid="uid://dnvmo0n3i4q18" path="res://textures/ui/pr/pr8gwho.tga" id="14_2qol3"]
+[ext_resource type="Texture2D" uid="uid://dvm1kjc7h5ka5" path="res://textures/ui/pr/pr8xwho.tga" id="15_1jih4"]
+[ext_resource type="Texture2D" uid="uid://clajbkcdl7usx" path="res://textures/ui/su/chars/su8iflambo.tga" id="16_yqdjq"]
+[ext_resource type="Texture2D" uid="uid://o8nqsm8hg1m8" path="res://textures/ui/pr/8hotrod/pr8icarhot11.tga" id="17_8758b"]
+[ext_resource type="Texture2D" uid="uid://ykute5ygfhle" path="res://textures/ui/pr/pr8_chngechr.tga" id="18_b4f6u"]
+[ext_resource type="Texture2D" uid="uid://d1l0ld2nrr410" path="res://textures/ui/pr/pr8usksid.tga" id="19_vwqw2"]
+[ext_resource type="Texture2D" uid="uid://bk02mu3863128" path="res://textures/ui/pr/pr8dsksid.tga" id="20_d77d1"]
+[ext_resource type="Texture2D" uid="uid://jppj1xjntvy8" path="res://textures/ui/pr/pr8gsksid.tga" id="21_cy6ly"]
+[ext_resource type="Texture2D" uid="uid://cd7ir7kqyikcm" path="res://textures/ui/su/chars/su8isid.tga" id="22_jgu7h"]
+[ext_resource type="Texture2D" uid="uid://dra7sxckwtpra" path="res://textures/ui/pr/8muscle/pr8icarmus07.tga" id="23_xibg2"]
+[ext_resource type="Texture2D" uid="uid://d4bc1b3dpun3a" path="res://textures/ui/pr/pr8uskbrad.tga" id="24_kkfu6"]
+[ext_resource type="Texture2D" uid="uid://ccwjqw22ykspj" path="res://textures/ui/pr/pr8dskbrad.tga" id="25_pahd3"]
+[ext_resource type="Texture2D" uid="uid://dy1hdxwfbfy23" path="res://textures/ui/pr/pr8gskbrad.tga" id="26_slsfb"]
+[ext_resource type="Texture2D" uid="uid://bggqvxfw5vd0d" path="res://textures/ui/su/chars/su8ibrad.tga" id="27_uu8r0"]
+[ext_resource type="Texture2D" uid="uid://biuhnh8e158h1" path="res://textures/ui/pr/8f1/pr8icarf1_09.tga" id="28_47eyq"]
+[ext_resource type="Texture2D" uid="uid://dy0g3d8lwx6y3" path="res://textures/ui/pr/pr8usksandy.tga" id="29_4spit"]
+[ext_resource type="Texture2D" uid="uid://e7j5pd1qatwx" path="res://textures/ui/pr/pr8dsksandy.tga" id="30_gxxub"]
+[ext_resource type="Texture2D" uid="uid://bw8c17318bbcj" path="res://textures/ui/pr/pr8gsksandy.tga" id="31_hc6ov"]
+[ext_resource type="Texture2D" uid="uid://dusi3ev0ngmnf" path="res://textures/ui/su/chars/su8isandy.tga" id="32_0gdd5"]
+[ext_resource type="Texture2D" uid="uid://b772m2r4263ol" path="res://textures/ui/pr/8beachbug/pr8icarbea04.tga" id="33_64jdw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8716h"]
+font = ExtResource("10_3y65r")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_tmj2q"]
+font = ExtResource("10_3y65r")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_pvr3s"]
+font = ExtResource("10_3y65r")
+font_size = 15
+font_color = Color(0.678431, 0.843137, 0.611765, 1)
+
+[node name="RacePreview" type="Control"]
+texture_filter = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dltaw")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_oitj7")
+
+[node name="FrameNoRight" parent="." instance=ExtResource("3_mctgo")]
+custom_minimum_size = Vector2(700, 600)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+offset_right = -100.0
+grow_horizontal = 2
+
+[node name="RacePreviewPanel" type="NinePatchRect" parent="FrameNoRight"]
+custom_minimum_size = Vector2(193, 600)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_right = 83.0
+grow_vertical = 2
+texture = ExtResource("4_qis8w")
+patch_margin_top = 240
+patch_margin_bottom = 200
+
+[node name="GoButton" type="TextureButton" parent="FrameNoRight/RacePreviewPanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -135.0
+offset_right = -30.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_f5h86")
+texture_pressed = ExtResource("6_nin0o")
+texture_hover = ExtResource("7_b7fhf")
+
+[node name="BackButton" parent="FrameNoRight" instance=ExtResource("8_w8laj")]
+layout_mode = 0
+
+[node name="FrameLabelBox" parent="FrameNoRight" instance=ExtResource("9_kxn32")]
+layout_mode = 1
+
+[node name="Label" parent="FrameNoRight/FrameLabelBox" index="0"]
+text = "PRTITLE"
+label_settings = SubResource("LabelSettings_8716h")
+
+[node name="CharacterPanels" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -347.0
+offset_top = -228.0
+offset_right = 339.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player" type="TextureRect" parent="CharacterPanels"]
+layout_mode = 0
+offset_right = 164.0
+offset_bottom = 359.0
+texture = ExtResource("11_l7ao2")
+
+[node name="CharacterInfoButton" type="TextureButton" parent="CharacterPanels/Player"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 31.0
+offset_right = 148.0
+offset_bottom = 82.0
+texture_normal = ExtResource("12_mgykp")
+texture_pressed = ExtResource("13_lyy2p")
+texture_hover = ExtResource("14_2qol3")
+texture_disabled = ExtResource("15_1jih4")
+
+[node name="CharacterPortrait" type="TextureRect" parent="CharacterPanels/Player"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 87.0
+offset_right = 152.0
+offset_bottom = 192.0
+texture = ExtResource("16_yqdjq")
+
+[node name="CharacterName" type="Label" parent="CharacterPanels/Player"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 200.0
+offset_right = 70.0
+offset_bottom = 222.0
+text = "PRPLYR1"
+label_settings = SubResource("LabelSettings_tmj2q")
+vertical_alignment = 1
+
+[node name="VehiclePreview" type="TextureRect" parent="CharacterPanels/Player"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 232.0
+offset_right = 152.0
+offset_bottom = 337.0
+texture = ExtResource("17_8758b")
+
+[node name="Opponent1" type="TextureRect" parent="CharacterPanels"]
+layout_mode = 0
+offset_left = 174.0
+offset_right = 338.0
+offset_bottom = 359.0
+texture = ExtResource("11_l7ao2")
+
+[node name="ChangeCharacterFrame" type="TextureRect" parent="CharacterPanels/Opponent1"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 82.0
+texture = ExtResource("18_b4f6u")
+
+[node name="ChangeCharacterButton" type="TextureButton" parent="CharacterPanels/Opponent1/ChangeCharacterFrame"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 92.0
+offset_bottom = 82.0
+texture_normal = ExtResource("19_vwqw2")
+texture_pressed = ExtResource("20_d77d1")
+texture_hover = ExtResource("21_cy6ly")
+
+[node name="CharacterInfoButton" type="TextureButton" parent="CharacterPanels/Opponent1"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 31.0
+offset_right = 148.0
+offset_bottom = 82.0
+texture_normal = ExtResource("12_mgykp")
+texture_pressed = ExtResource("13_lyy2p")
+texture_hover = ExtResource("14_2qol3")
+texture_disabled = ExtResource("15_1jih4")
+
+[node name="CharacterPortrait" type="TextureRect" parent="CharacterPanels/Opponent1"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 87.0
+offset_right = 152.0
+offset_bottom = 192.0
+texture = ExtResource("22_jgu7h")
+
+[node name="CharacterName" type="Label" parent="CharacterPanels/Opponent1"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 200.0
+offset_right = 85.0
+offset_bottom = 222.0
+text = "DISID"
+label_settings = SubResource("LabelSettings_pvr3s")
+vertical_alignment = 1
+
+[node name="VehiclePreview" type="TextureRect" parent="CharacterPanels/Opponent1"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 232.0
+offset_right = 152.0
+offset_bottom = 337.0
+texture = ExtResource("23_xibg2")
+
+[node name="Opponent2" type="TextureRect" parent="CharacterPanels"]
+layout_mode = 0
+offset_left = 348.0
+offset_right = 512.0
+offset_bottom = 359.0
+texture = ExtResource("11_l7ao2")
+
+[node name="ChangeCharacterFrame" type="TextureRect" parent="CharacterPanels/Opponent2"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 82.0
+texture = ExtResource("18_b4f6u")
+
+[node name="ChangeCharacterButton" type="TextureButton" parent="CharacterPanels/Opponent2/ChangeCharacterFrame"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 92.0
+offset_bottom = 82.0
+texture_normal = ExtResource("24_kkfu6")
+texture_pressed = ExtResource("25_pahd3")
+texture_hover = ExtResource("26_slsfb")
+
+[node name="CharacterInfoButton" type="TextureButton" parent="CharacterPanels/Opponent2"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 31.0
+offset_right = 148.0
+offset_bottom = 82.0
+texture_normal = ExtResource("12_mgykp")
+texture_pressed = ExtResource("13_lyy2p")
+texture_hover = ExtResource("14_2qol3")
+texture_disabled = ExtResource("15_1jih4")
+
+[node name="CharacterPortrait" type="TextureRect" parent="CharacterPanels/Opponent2"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 87.0
+offset_right = 152.0
+offset_bottom = 192.0
+texture = ExtResource("27_uu8r0")
+
+[node name="CharacterName" type="Label" parent="CharacterPanels/Opponent2"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 200.0
+offset_right = 85.0
+offset_bottom = 222.0
+text = "DIBRAD"
+label_settings = SubResource("LabelSettings_pvr3s")
+vertical_alignment = 1
+
+[node name="VehiclePreview" type="TextureRect" parent="CharacterPanels/Opponent2"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 232.0
+offset_right = 152.0
+offset_bottom = 337.0
+texture = ExtResource("28_47eyq")
+
+[node name="Opponent3" type="TextureRect" parent="CharacterPanels"]
+layout_mode = 0
+offset_left = 522.0
+offset_right = 686.0
+offset_bottom = 359.0
+texture = ExtResource("11_l7ao2")
+
+[node name="ChangeCharacterFrame" type="TextureRect" parent="CharacterPanels/Opponent3"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 82.0
+texture = ExtResource("18_b4f6u")
+
+[node name="ChangeCharacterButton" type="TextureButton" parent="CharacterPanels/Opponent3/ChangeCharacterFrame"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 92.0
+offset_bottom = 82.0
+texture_normal = ExtResource("29_4spit")
+texture_pressed = ExtResource("30_gxxub")
+texture_hover = ExtResource("31_hc6ov")
+
+[node name="CharacterInfoButton" type="TextureButton" parent="CharacterPanels/Opponent3"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 31.0
+offset_right = 148.0
+offset_bottom = 82.0
+texture_normal = ExtResource("12_mgykp")
+texture_pressed = ExtResource("13_lyy2p")
+texture_hover = ExtResource("14_2qol3")
+texture_disabled = ExtResource("15_1jih4")
+
+[node name="CharacterPortrait" type="TextureRect" parent="CharacterPanels/Opponent3"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 87.0
+offset_right = 152.0
+offset_bottom = 192.0
+texture = ExtResource("32_0gdd5")
+
+[node name="CharacterName" type="Label" parent="CharacterPanels/Opponent3"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 200.0
+offset_right = 85.0
+offset_bottom = 222.0
+text = "DISANDY"
+label_settings = SubResource("LabelSettings_pvr3s")
+vertical_alignment = 1
+
+[node name="VehiclePreview" type="TextureRect" parent="CharacterPanels/Opponent3"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 232.0
+offset_right = 152.0
+offset_bottom = 337.0
+texture = ExtResource("33_64jdw")
+
+[editable path="FrameNoRight/FrameLabelBox"]

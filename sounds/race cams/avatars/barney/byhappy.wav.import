@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dow5s51vj02kl"
+path="res://.godot/imported/byhappy.wav-c57468490a63fbf5286b976283d1b847.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/avatars/barney/byhappy.wav"
+dest_files=["res://.godot/imported/byhappy.wav-c57468490a63fbf5286b976283d1b847.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

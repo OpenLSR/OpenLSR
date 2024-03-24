@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ct23jt8623ghq"
+path="res://.godot/imported/chip 2hwave.wav-1685d6efb1e442fa087947317b572044.sample"
+
+[deps]
+
+source_file="res://sounds/charscrn/chip 2hwave.wav"
+dest_files=["res://.godot/imported/chip 2hwave.wav-1685d6efb1e442fa087947317b572044.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

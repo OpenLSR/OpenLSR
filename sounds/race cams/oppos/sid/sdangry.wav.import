@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://droke2ir5gedh"
+path="res://.godot/imported/sdangry.wav-7c47f9522275899fb28a2bd0ba20c74f.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/oppos/sid/sdangry.wav"
+dest_files=["res://.godot/imported/sdangry.wav-7c47f9522275899fb28a2bd0ba20c74f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

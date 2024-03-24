@@ -1,0 +1,212 @@
+[gd_scene load_steps=45 format=3 uid="uid://co1lfbfnvm0km"]
+
+[ext_resource type="PackedScene" uid="uid://cwru0sq8daajy" path="res://ui/elements/frame_no_right.tscn" id="1_71w5o"]
+[ext_resource type="Script" path="res://ui/menu/editor.gd" id="1_xfdpu"]
+[ext_resource type="Texture2D" uid="uid://dwafx33xisgnr" path="res://textures/ui/construction/panel_edit.png" id="2_7dbsa"]
+[ext_resource type="Texture2D" uid="uid://b1dp624nrxc0x" path="res://textures/ui/frame/frame_no_bottom_right.png" id="3_lumxd"]
+[ext_resource type="PackedScene" uid="uid://du18yi1kptpxv" path="res://ui/elements/buttons/frame/back_button.tscn" id="4_vg1m1"]
+[ext_resource type="Texture2D" uid="uid://corw6raqygquk" path="res://textures/ui/cn/cn8_polp.tga" id="5_wfpj7"]
+[ext_resource type="Texture2D" uid="uid://x5pgkblug7dj" path="res://textures/ui/cn/cn8_poly.tga" id="6_mc618"]
+[ext_resource type="Texture2D" uid="uid://bo3jf4inhnqpi" path="res://textures/ui/cn/cn8uprint.tga" id="7_pf5ra"]
+[ext_resource type="Texture2D" uid="uid://cji2ln1oglse6" path="res://textures/ui/cn/cn8dprint.tga" id="8_4f5a3"]
+[ext_resource type="Texture2D" uid="uid://bydl6q4dode4x" path="res://textures/ui/cn/cn8gprint.tga" id="9_cig1r"]
+[ext_resource type="Texture2D" uid="uid://bfnv177fml2lw" path="res://textures/ui/cn/cn8xprint.tga" id="10_8vrxs"]
+[ext_resource type="Texture2D" uid="uid://btqapihpws7kh" path="res://textures/ui/cn/cn8usave.tga" id="11_uxcx4"]
+[ext_resource type="Texture2D" uid="uid://bhpuq33w4sr0g" path="res://textures/ui/cn/cn8dsave.tga" id="12_gnfa3"]
+[ext_resource type="Texture2D" uid="uid://bsqpb7fpd3cx5" path="res://textures/ui/cn/cn8gsave.tga" id="13_gb6v0"]
+[ext_resource type="Texture2D" uid="uid://cd1nh387rqsew" path="res://textures/ui/cn/cn8unew.tga" id="14_o0pv8"]
+[ext_resource type="Texture2D" uid="uid://dxr0wyq7lx8jy" path="res://textures/ui/cn/cn8dnew.tga" id="15_jolpn"]
+[ext_resource type="Texture2D" uid="uid://byf6wskv62r63" path="res://textures/ui/cn/cn8gnew.tga" id="16_1i6it"]
+[ext_resource type="Texture2D" uid="uid://bbjxe6mh440ec" path="res://textures/ui/cn/cn8ueraser.tga" id="17_5jxha"]
+[ext_resource type="Texture2D" uid="uid://0yumff86aij8" path="res://textures/ui/cn/cn8deraser.tga" id="18_bmjsm"]
+[ext_resource type="Texture2D" uid="uid://dibn0so121mnv" path="res://textures/ui/cn/cn8geraser.tga" id="19_30wk8"]
+[ext_resource type="Texture2D" uid="uid://cyj1ughmy15m2" path="res://textures/ui/cn/cn8uzoom.tga" id="20_0eptm"]
+[ext_resource type="Texture2D" uid="uid://cstjn2gns6bkv" path="res://textures/ui/cn/cn8dzoom.tga" id="21_xy2sn"]
+[ext_resource type="Texture2D" uid="uid://bo6vvftwy665f" path="res://textures/ui/cn/cn8gzoom.tga" id="22_048v0"]
+[ext_resource type="Texture2D" uid="uid://rgb6pes5bu3r" path="res://textures/ui/cn/cn8ucam.tga" id="23_4j2rh"]
+[ext_resource type="Texture2D" uid="uid://d3k75rxqijifi" path="res://textures/ui/cn/cn8dcam.tga" id="24_gjvax"]
+[ext_resource type="Texture2D" uid="uid://qhw2alqvum8" path="res://textures/ui/cn/cn8gcam.tga" id="25_fp5il"]
+[ext_resource type="Texture2D" uid="uid://diqcf2e0x0yan" path="res://textures/ui/cn/cn8ugo.tga" id="26_vnpnq"]
+[ext_resource type="Texture2D" uid="uid://ckxvvue8rax3w" path="res://textures/ui/cn/cn8dgo.tga" id="27_tuofe"]
+[ext_resource type="Texture2D" uid="uid://b4rcyln6cnqaq" path="res://textures/ui/cn/cn8ggo.tga" id="28_c8td2"]
+[ext_resource type="Texture2D" uid="uid://dow0is3orkkml" path="res://textures/ui/cn/cn8uscenery.tga" id="29_ywrjy"]
+[ext_resource type="Texture2D" uid="uid://bdbcsxkjirpmw" path="res://textures/ui/cn/cn8dscenery.tga" id="30_vaggj"]
+[ext_resource type="Texture2D" uid="uid://lolydr5u87e3" path="res://textures/ui/cn/cn8gscenery.tga" id="31_ogii8"]
+[ext_resource type="Texture2D" uid="uid://dtkxfy28nn0ne" path="res://textures/ui/cn/cn8utrack.tga" id="32_le6ft"]
+[ext_resource type="Texture2D" uid="uid://3dtbclxltvka" path="res://textures/ui/cn/cn8dtrack.tga" id="33_yghaa"]
+[ext_resource type="Texture2D" uid="uid://c184d6k6454ql" path="res://textures/ui/cn/cn8gtrack.tga" id="34_opwpu"]
+[ext_resource type="Texture2D" uid="uid://b0o281k0lhmyc" path="res://textures/ui/cn/cn8ubuilding.tga" id="35_bcqom"]
+[ext_resource type="Texture2D" uid="uid://clfkxkhl4845q" path="res://textures/ui/cn/cn8dbuilding.tga" id="36_wp6dt"]
+[ext_resource type="Texture2D" uid="uid://v12a8vbtetf3" path="res://textures/ui/cn/cn8gbuilding.tga" id="37_injxf"]
+[ext_resource type="Texture2D" uid="uid://ckw7qx7gsblxr" path="res://textures/ui/cn/cn8usun.tga" id="38_wtyrq"]
+[ext_resource type="Texture2D" uid="uid://cybtesxekv32v" path="res://textures/ui/cn/cn8dsun.tga" id="39_efmvo"]
+[ext_resource type="Texture2D" uid="uid://dxhvuku3pvun" path="res://textures/ui/cn/cn8gsun.tga" id="40_f3ptx"]
+[ext_resource type="Texture2D" uid="uid://jyoxdt6y3ml" path="res://textures/ui/cn/cn8utice.tga" id="41_lwni2"]
+[ext_resource type="Texture2D" uid="uid://bn848yctl3mjj" path="res://textures/ui/cn/cn8dtice.tga" id="42_bjtm1"]
+[ext_resource type="Texture2D" uid="uid://b15rqxgohwb3h" path="res://textures/ui/cn/cn8gtice.tga" id="43_x8jhr"]
+
+[node name="Editor" type="Control"]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xfdpu")
+
+[node name="FrameNoRight" parent="." instance=ExtResource("1_71w5o")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+offset_right = -100.0
+grow_horizontal = 2
+texture = ExtResource("3_lumxd")
+
+[node name="BackButton" parent="FrameNoRight" instance=ExtResource("4_vg1m1")]
+layout_mode = 1
+
+[node name="Panel" type="TextureRect" parent="FrameNoRight"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_right = 97.0
+offset_bottom = 600.0
+texture = ExtResource("2_7dbsa")
+
+[node name="IndicatorBar" type="TextureProgressBar" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 90.0
+offset_right = 35.0
+offset_bottom = 345.0
+value = 62.0
+fill_mode = 3
+texture_under = ExtResource("5_wfpj7")
+texture_progress = ExtResource("6_mc618")
+
+[node name="PrintButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 520.0
+offset_right = 195.0
+offset_bottom = 570.0
+disabled = true
+texture_normal = ExtResource("7_pf5ra")
+texture_pressed = ExtResource("8_4f5a3")
+texture_hover = ExtResource("9_cig1r")
+texture_disabled = ExtResource("10_8vrxs")
+
+[node name="SaveButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 525.0
+offset_right = 145.0
+offset_bottom = 575.0
+texture_normal = ExtResource("11_uxcx4")
+texture_pressed = ExtResource("12_gnfa3")
+texture_hover = ExtResource("13_gb6v0")
+
+[node name="NewTrackButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 520.0
+offset_right = 95.0
+offset_bottom = 570.0
+texture_normal = ExtResource("14_o0pv8")
+texture_pressed = ExtResource("15_jolpn")
+texture_hover = ExtResource("16_1i6it")
+
+[node name="EraserButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 470.0
+offset_right = 95.0
+offset_bottom = 520.0
+texture_normal = ExtResource("17_5jxha")
+texture_pressed = ExtResource("18_bmjsm")
+texture_hover = ExtResource("19_30wk8")
+
+[node name="ZoomButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 470.0
+offset_right = 195.0
+offset_bottom = 520.0
+texture_normal = ExtResource("20_0eptm")
+texture_pressed = ExtResource("21_xy2sn")
+texture_hover = ExtResource("22_048v0")
+
+[node name="CameraButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 475.0
+offset_right = 145.0
+offset_bottom = 525.0
+texture_normal = ExtResource("23_4j2rh")
+texture_pressed = ExtResource("24_gjvax")
+texture_hover = ExtResource("25_fp5il")
+
+[node name="GoButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 380.0
+offset_right = 185.0
+offset_bottom = 470.0
+texture_normal = ExtResource("26_vnpnq")
+texture_pressed = ExtResource("27_tuofe")
+texture_hover = ExtResource("28_c8td2")
+
+[node name="SceneryButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 330.0
+offset_right = 195.0
+offset_bottom = 380.0
+texture_normal = ExtResource("29_ywrjy")
+texture_pressed = ExtResource("30_vaggj")
+texture_hover = ExtResource("31_ogii8")
+
+[node name="TrackButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 330.0
+offset_right = 95.0
+offset_bottom = 380.0
+texture_normal = ExtResource("32_le6ft")
+texture_pressed = ExtResource("33_yghaa")
+texture_hover = ExtResource("34_opwpu")
+
+[node name="BuildingButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 325.0
+offset_right = 145.0
+offset_bottom = 375.0
+texture_normal = ExtResource("35_bcqom")
+texture_pressed = ExtResource("36_wp6dt")
+texture_hover = ExtResource("37_injxf")
+
+[node name="DayNightButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 28.0
+offset_right = 186.0
+offset_bottom = 78.0
+texture_normal = ExtResource("38_wtyrq")
+texture_pressed = ExtResource("39_efmvo")
+texture_hover = ExtResource("40_f3ptx")
+
+[node name="WorldButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 15.0
+offset_right = 130.0
+offset_bottom = 80.0
+texture_normal = ExtResource("41_lwni2")
+texture_pressed = ExtResource("42_bjtm1")
+texture_hover = ExtResource("43_x8jhr")
+
+[connection signal="pressed" from="FrameNoRight/BackButton" to="." method="_on_back_button_pressed"]

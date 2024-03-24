@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ch3h0tal8q4jn"
+path="res://.godot/imported/chbumps.wav-d1677cb8ad317bd2099bef4bf2181a52.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/avatars/chip/chbumps.wav"
+dest_files=["res://.godot/imported/chbumps.wav-d1677cb8ad317bd2099bef4bf2181a52.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

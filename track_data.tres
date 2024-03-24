@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TrackData" load_steps=2 format=3 uid="uid://b2iy1n6lhdm33"]
+
+[ext_resource type="Script" path="res://track_data.gd" id="1_j6jo5"]
+
+[resource]
+script = ExtResource("1_j6jo5")
+theme = 3
+size = 1
+time = 0
+playable = false
+pieces = Array[Resource("res://track_piece_data.gd")]([])

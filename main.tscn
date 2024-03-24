@@ -1,0 +1,69 @@
+[gd_scene load_steps=17 format=3 uid="uid://dayqpognlbk0v"]
+
+[ext_resource type="Script" path="res://ui/main.gd" id="1_ahaa5"]
+[ext_resource type="PackedScene" uid="uid://cua464htue0pc" path="res://ui/menu/main_menu.tscn" id="2_sc4y1"]
+[ext_resource type="Script" path="res://scripts/music_manager.gd" id="3_333u2"]
+[ext_resource type="PackedScene" uid="uid://b0hkquqd24f6b" path="res://ui/menu/options_menu.tscn" id="3_alnlh"]
+[ext_resource type="AudioStream" path="res://music/FRONTND7.XM" id="4_aicki"]
+[ext_resource type="PackedScene" uid="uid://ckeil5x2ra24b" path="res://ui/menu/race_menu.tscn" id="4_s5mgl"]
+[ext_resource type="PackedScene" uid="uid://co1lfbfnvm0km" path="res://ui/menu/editor.tscn" id="5_6rbmm"]
+[ext_resource type="AudioStream" path="res://music/MRX.XM" id="5_bt5uu"]
+[ext_resource type="AudioStream" path="res://music/CITYEXP6.XM" id="6_lfa13"]
+[ext_resource type="AudioStream" path="res://music/CITYSLW7.XM" id="7_5vmqc"]
+[ext_resource type="AudioStream" path="res://music/DESERTFA.XM" id="8_0fwx6"]
+[ext_resource type="AudioStream" path="res://music/DESLEXP6.XM" id="9_hiy1u"]
+[ext_resource type="AudioStream" path="res://music/JUNGLEF2.XM" id="10_tmkrn"]
+[ext_resource type="AudioStream" path="res://music/JUNGLSLO.XM" id="11_y2nwx"]
+[ext_resource type="AudioStream" path="res://music/ICEFST2.XM" id="12_u4q6x"]
+[ext_resource type="AudioStream" path="res://music/ICESLW2.XM" id="13_qly3u"]
+
+[node name="Main" type="Node3D"]
+
+[node name="UI" type="Control" parent="."]
+texture_filter = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ahaa5")
+
+[node name="MainMenu" parent="UI" instance=ExtResource("2_sc4y1")]
+layout_mode = 1
+
+[node name="OptionsMenu" parent="UI" instance=ExtResource("3_alnlh")]
+visible = false
+layout_mode = 1
+
+[node name="RaceMenu" parent="UI" instance=ExtResource("4_s5mgl")]
+visible = false
+layout_mode = 1
+
+[node name="Editor" parent="UI" instance=ExtResource("5_6rbmm")]
+visible = false
+layout_mode = 1
+
+[node name="MusicManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_333u2")
+frontend = ExtResource("4_aicki")
+mr_x = ExtResource("5_bt5uu")
+city_race = ExtResource("6_lfa13")
+city_build = ExtResource("7_5vmqc")
+desert_race = ExtResource("8_0fwx6")
+desert_build = ExtResource("9_hiy1u")
+jungle_race = ExtResource("10_tmkrn")
+jungle_build = ExtResource("11_y2nwx")
+arctic_race = ExtResource("12_u4q6x")
+arctic_build = ExtResource("13_qly3u")
+
+[node name="XMPlayer" type="AudioStreamPlayer" parent="MusicManager"]
+bus = &"Music"
+
+[connection signal="load_editor" from="UI/MainMenu" to="UI" method="_on_main_menu_load_editor"]
+[connection signal="options_pressed" from="UI/MainMenu" to="UI" method="_on_main_menu_options_pressed"]
+[connection signal="pick_race" from="UI/MainMenu" to="UI" method="_on_main_menu_pick_race"]
+[connection signal="go_back" from="UI/OptionsMenu" to="UI" method="_on_go_back"]
+[connection signal="go_back" from="UI/RaceMenu" to="UI" method="_on_go_back"]
+[connection signal="go_back" from="UI/Editor" to="UI" method="_on_go_back"]

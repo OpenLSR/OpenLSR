@@ -1,0 +1,15 @@
+[remap]
+
+importer="openlsr.mvd"
+type="SpriteFrames"
+uid="uid://dlsfbo5m0dyf6"
+path="res://.godot/imported/lucky.mvd-e94dc51511d30a4ca93d97454d24ef21.res"
+
+[deps]
+
+source_file="res://videos/mvd/lucky.mvd"
+dest_files=["res://.godot/imported/lucky.mvd-e94dc51511d30a4ca93d97454d24ef21.res"]
+
+[params]
+
+myOption=false

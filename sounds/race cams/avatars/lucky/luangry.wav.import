@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bip86eyay5p5y"
+path="res://.godot/imported/luangry.wav-2cd97b0d60d9f43fe384a1288e6e8ed8.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/avatars/lucky/luangry.wav"
+dest_files=["res://.godot/imported/luangry.wav-2cd97b0d60d9f43fe384a1288e6e8ed8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

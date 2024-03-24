@@ -1,0 +1,15 @@
+[remap]
+
+importer="openlsr.mvd"
+type="SpriteFrames"
+uid="uid://ewmy6vrws4d3"
+path="res://.godot/imported/brad.mvd-9e15f7ca9dc28b521bc0c5fc2166a69a.res"
+
+[deps]
+
+source_file="res://videos/mvd/brad.mvd"
+dest_files=["res://.godot/imported/brad.mvd-9e15f7ca9dc28b521bc0c5fc2166a69a.res"]
+
+[params]
+
+myOption=false

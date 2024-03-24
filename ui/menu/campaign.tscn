@@ -1,0 +1,221 @@
+[gd_scene load_steps=9 format=3 uid="uid://cefm14jbjet17"]
+
+[ext_resource type="Script" path="res://min_size.gd" id="1_rcf0x"]
+[ext_resource type="Texture2D" uid="uid://dmm78mcdj118n" path="res://textures/ui/campaign/campaign_background_fade.png" id="2_13byo"]
+[ext_resource type="PackedScene" uid="uid://b478vux3rtjk6" path="res://ui/elements/campaign/campaign_node.tscn" id="3_3nfun"]
+[ext_resource type="Texture2D" uid="uid://buswitr856oh2" path="res://textures/ui/campaign/flashing_node.tres" id="4_yn3xj"]
+[ext_resource type="Texture2D" uid="uid://dn1wi4yaspxgu" path="res://_ref/gameplay08.png" id="5_hraw4"]
+[ext_resource type="PackedScene" uid="uid://bfmiqy0m77420" path="res://ui/elements/label_frame.tscn" id="6_d13bh"]
+[ext_resource type="PackedScene" uid="uid://du18yi1kptpxv" path="res://ui/elements/buttons/frame/back_button.tscn" id="7_8amw3"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_j63pt"]
+
+[node name="Campaign" type="Control"]
+texture_filter = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rcf0x")
+
+[node name="FakeWater" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00392157, 0, 0, 1)
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_13byo")
+
+[node name="CampaignNode1" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 465.0
+offset_right = 212.0
+offset_bottom = 513.0
+texture_normal = ExtResource("4_yn3xj")
+
+[node name="CampaignNode2" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 408.0
+offset_right = 225.0
+offset_bottom = 456.0
+
+[node name="CampaignNode3" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 360.0
+offset_right = 281.0
+offset_bottom = 408.0
+
+[node name="CampaignNode4" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 433.0
+offset_right = 296.0
+offset_bottom = 481.0
+
+[node name="CampaignNode5" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 392.0
+offset_right = 330.0
+offset_bottom = 440.0
+
+[node name="CampaignNode6" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 241.0
+offset_right = 350.0
+offset_bottom = 289.0
+
+[node name="CampaignNode7" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 208.0
+offset_right = 286.0
+offset_bottom = 256.0
+
+[node name="CampaignNode8" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 183.0
+offset_right = 164.0
+offset_bottom = 231.0
+
+[node name="CampaignNode9" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 135.0
+offset_right = 225.0
+offset_bottom = 183.0
+
+[node name="CampaignNode10" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 191.0
+offset_right = 332.0
+offset_bottom = 239.0
+
+[node name="CampaignNode11" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 150.0
+offset_right = 444.0
+offset_bottom = 198.0
+
+[node name="CampaignNode12" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 91.0
+offset_right = 460.0
+offset_bottom = 139.0
+
+[node name="CampaignNode13" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 75.0
+offset_right = 507.0
+offset_bottom = 123.0
+
+[node name="CampaignNode14" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 95.0
+offset_right = 568.0
+offset_bottom = 143.0
+
+[node name="CampaignNode15" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 150.0
+offset_right = 549.0
+offset_bottom = 198.0
+
+[node name="CampaignNode16" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 263.0
+offset_right = 524.0
+offset_bottom = 311.0
+
+[node name="CampaignNode17" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 267.0
+offset_right = 609.0
+offset_bottom = 315.0
+
+[node name="CampaignNode18" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 633.0
+offset_top = 286.0
+offset_right = 665.0
+offset_bottom = 334.0
+
+[node name="CampaignNode19" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 692.0
+offset_top = 331.0
+offset_right = 724.0
+offset_bottom = 379.0
+
+[node name="CampaignNode20" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 626.0
+offset_top = 357.0
+offset_right = 658.0
+offset_bottom = 405.0
+
+[node name="CampaignNode21" parent="Background" instance=ExtResource("3_3nfun")]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 276.0
+offset_right = 465.0
+offset_bottom = 324.0
+
+[node name="Gameplay08" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("5_hraw4")
+
+[node name="LabelFrame" parent="." instance=ExtResource("6_d13bh")]
+layout_mode = 1
+
+[node name="Label" parent="LabelFrame/FrameLabelBox" index="0"]
+text = "CA_CATITLE"
+
+[node name="BackButton" parent="LabelFrame" instance=ExtResource("7_8amw3")]
+layout_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 290.0
+offset_right = 169.0
+offset_bottom = 330.0
+texture_hover = SubResource("AnimatedTexture_j63pt")
+
+[editable path="LabelFrame"]
+[editable path="LabelFrame/FrameLabelBox"]

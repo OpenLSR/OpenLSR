@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfmiqy0m77420"]
+
+[ext_resource type="PackedScene" uid="uid://dhug8grg22asc" path="res://ui/elements/frame.tscn" id="1_cxktu"]
+[ext_resource type="PackedScene" uid="uid://dgqubq3v05bct" path="res://ui/elements/frame_label.tscn" id="2_y47tu"]
+
+[node name="LabelFrame" instance=ExtResource("1_cxktu")]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FrameLabelBox" parent="." index="1" instance=ExtResource("2_y47tu")]
+layout_mode = 1

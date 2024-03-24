@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwru0sq8daajy"]
+
+[ext_resource type="Texture2D" uid="uid://cmqpw5aqed3nx" path="res://textures/ui/frame.png" id="1_ls4hu"]
+[ext_resource type="PackedScene" uid="uid://c8u3c36mhfn67" path="res://ui/elements/buttons/frame/help_button.tscn" id="2_apqk0"]
+
+[node name="FrameNoRight" type="NinePatchRect"]
+z_index = 10
+texture_filter = 3
+custom_minimum_size = Vector2(600, 600)
+layout_direction = 2
+anchors_preset = -1
+anchor_right = 0.469
+anchor_bottom = 1.0
+offset_right = -0.320007
+grow_vertical = 2
+texture = ExtResource("1_ls4hu")
+region_rect = Rect2(0, 0, 618, 600)
+patch_margin_left = 180
+patch_margin_top = 100
+patch_margin_bottom = 150
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="HelpButton" parent="." instance=ExtResource("2_apqk0")]
+layout_mode = 1

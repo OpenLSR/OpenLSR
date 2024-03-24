@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TrackPieceData" load_steps=2 format=3 uid="uid://u0qcbfxa6bn4"]
+
+[ext_resource type="Script" path="res://track_piece_data.gd" id="1_ruf0n"]
+
+[resource]
+script = ExtResource("1_ruf0n")
+theme = 0
+hello = 0

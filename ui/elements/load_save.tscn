@@ -1,0 +1,178 @@
+[gd_scene load_steps=25 format=3 uid="uid://ducrjqxiwyui4"]
+
+[ext_resource type="Texture2D" uid="uid://b5rdfvnhlcopa" path="res://_ref/gameplay15.png" id="1_buwhc"]
+[ext_resource type="Script" path="res://min_size.gd" id="1_c6yyi"]
+[ext_resource type="PackedScene" uid="uid://cwru0sq8daajy" path="res://ui/elements/frame_no_right.tscn" id="1_m7n5p"]
+[ext_resource type="Texture2D" uid="uid://dwlcj0bbo3qwo" path="res://textures/ui/su/su8_back.tga" id="1_pb2er"]
+[ext_resource type="Texture2D" uid="uid://b1dp624nrxc0x" path="res://textures/ui/frame/frame_no_bottom_right.png" id="2_5l0pk"]
+[ext_resource type="PackedScene" uid="uid://dgqubq3v05bct" path="res://ui/elements/frame_label.tscn" id="3_1n5xa"]
+[ext_resource type="Texture2D" uid="uid://drokyc8x7mbi5" path="res://textures/ui/load_save/panel_edit.png" id="3_5loba"]
+[ext_resource type="Texture2D" uid="uid://g1jq42m7einu" path="res://textures/ui/ls/ls8ugo.tga" id="4_0ny83"]
+[ext_resource type="Texture2D" uid="uid://fxw2rv2siw04" path="res://textures/ui/ls/ls8dgo.tga" id="5_o7sp7"]
+[ext_resource type="Texture2D" uid="uid://cla7axkrpe4m" path="res://textures/ui/ls/ls8ggo.tga" id="6_kd1ft"]
+[ext_resource type="Texture2D" uid="uid://dd3oobijbswuf" path="res://textures/ui/ls/ls8uhdd.tga" id="7_ml5v2"]
+[ext_resource type="Texture2D" uid="uid://dirqawvfc5wys" path="res://textures/ui/ls/ls8dhdd.tga" id="8_7hdcq"]
+[ext_resource type="Texture2D" uid="uid://dmx3nhjyjvq2j" path="res://textures/ui/ls/ls8ghdd.tga" id="9_o37ld"]
+[ext_resource type="ButtonGroup" uid="uid://uoddd4ih0o8c" path="res://ui/elements/buttons/load_save_button_group.tres" id="10_nqaqc"]
+[ext_resource type="Texture2D" uid="uid://blchlk1y22oj0" path="res://textures/ui/ls/ls8ufloppy.tga" id="10_rw4uv"]
+[ext_resource type="Texture2D" uid="uid://bclpyjlhi05yr" path="res://textures/ui/ls/ls8dfloppy.tga" id="11_cul5x"]
+[ext_resource type="Texture2D" uid="uid://lbk8v87u08m6" path="res://textures/ui/ls/ls8gfloppy.tga" id="12_af5nj"]
+[ext_resource type="Texture2D" uid="uid://4p3p2arvhw85" path="res://textures/ui/ls/ls8_frame.tga" id="13_jcb67"]
+[ext_resource type="FontFile" uid="uid://bcux62hxfyncl" path="res://fonts/Balonxb.ttf" id="16_ll27g"]
+[ext_resource type="Theme" uid="uid://bvul8rcpdypaq" path="res://ui/elements/theme_test.tres" id="17_dpcuw"]
+[ext_resource type="Script" path="res://scripts/selected_track.gd" id="18_tlr4x"]
+[ext_resource type="Script" path="res://ui/elements/track_list.gd" id="20_ku2ub"]
+[ext_resource type="Texture2D" uid="uid://b2owu4h1vay6g" path="res://textures/ui/ls/ls_imapice.tga" id="23_iq460"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_75ky3"]
+font = ExtResource("16_ll27g")
+font_size = 15
+
+[node name="LoadSave" type="Control"]
+texture_filter = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c6yyi")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pb2er")
+
+[node name="Gameplay15" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("1_buwhc")
+
+[node name="FrameNoRight" parent="." instance=ExtResource("1_m7n5p")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+offset_right = -100.0
+grow_horizontal = 2
+texture = ExtResource("2_5l0pk")
+
+[node name="FrameLabelBox" parent="FrameNoRight" instance=ExtResource("3_1n5xa")]
+layout_mode = 1
+
+[node name="Label" parent="FrameNoRight/FrameLabelBox" index="0"]
+text = "TSTITLE"
+
+[node name="Panel" type="TextureRect" parent="FrameNoRight"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -88.0
+offset_right = 97.0
+offset_bottom = 600.0
+texture = ExtResource("3_5loba")
+
+[node name="Ls8Ggo" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 380.0
+offset_right = 163.0
+offset_bottom = 470.0
+texture_normal = ExtResource("4_0ny83")
+texture_pressed = ExtResource("5_o7sp7")
+texture_hover = ExtResource("6_kd1ft")
+
+[node name="HDDButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 495.0
+offset_right = 93.0
+offset_bottom = 555.0
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("10_nqaqc")
+texture_normal = ExtResource("7_ml5v2")
+texture_pressed = ExtResource("8_7hdcq")
+texture_hover = ExtResource("9_o37ld")
+
+[node name="FloppyButton" type="TextureButton" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 495.0
+offset_right = 173.0
+offset_bottom = 555.0
+toggle_mode = true
+button_group = ExtResource("10_nqaqc")
+texture_normal = ExtResource("10_rw4uv")
+texture_pressed = ExtResource("11_cul5x")
+texture_hover = ExtResource("12_af5nj")
+
+[node name="TrackList" type="ItemList" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 72.0
+offset_right = 171.0
+offset_bottom = 365.0
+theme = ExtResource("17_dpcuw")
+item_count = 13
+item_0/text = "formula fun"
+item_1/text = "my nuts"
+item_2/text = "swampland"
+item_3/text = "gsdfgsdfgsdfgsdfgsdfgsdfgsdfg"
+item_4/text = "gamign"
+item_5/text = "super agming"
+item_6/text = "epic"
+item_7/text = "rap"
+item_8/text = "battles"
+item_9/text = "of"
+item_10/text = "history"
+item_11/text = "on god?"
+item_12/text = "no cap?"
+script = ExtResource("20_ku2ub")
+
+[node name="SelectedTrack" type="Label" parent="FrameNoRight/Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 44.0
+offset_right = 168.0
+offset_bottom = 68.0
+text = "fort fun"
+label_settings = SubResource("LabelSettings_75ky3")
+vertical_alignment = 1
+text_overrun_behavior = 3
+script = ExtResource("18_tlr4x")
+
+[node name="MapFrame" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -167.0
+offset_right = 167.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_jcb67")
+
+[node name="MapThumbnail" type="TextureRect" parent="MapFrame"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 327.0
+offset_bottom = 327.0
+texture = ExtResource("23_iq460")
+expand_mode = 2
+
+[connection signal="item_selected" from="FrameNoRight/Panel/TrackList" to="FrameNoRight/Panel/SelectedTrack" method="_on_track_list_item_selected"]
+
+[editable path="FrameNoRight/FrameLabelBox"]

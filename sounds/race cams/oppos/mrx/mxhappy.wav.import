@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dv08eqnpsrjjq"
+path="res://.godot/imported/mxhappy.wav-a4307a227ad41a6223ba2b0b717469dc.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/oppos/mrx/mxhappy.wav"
+dest_files=["res://.godot/imported/mxhappy.wav-a4307a227ad41a6223ba2b0b717469dc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

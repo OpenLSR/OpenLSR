@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhug8grg22asc"]
+
+[ext_resource type="Texture2D" uid="uid://cmqpw5aqed3nx" path="res://textures/ui/frame.png" id="1_8uuj3"]
+[ext_resource type="PackedScene" uid="uid://c8u3c36mhfn67" path="res://ui/elements/buttons/frame/help_button.tscn" id="2_nyork"]
+
+[node name="Frame" type="NinePatchRect"]
+z_index = 10
+texture_filter = 3
+custom_minimum_size = Vector2(800, 600)
+layout_direction = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8uuj3")
+region_rect = Rect2(0, 0, 800, 600)
+patch_margin_left = 180
+patch_margin_top = 100
+patch_margin_right = 195
+patch_margin_bottom = 150
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="HelpButton" parent="." instance=ExtResource("2_nyork")]
+layout_mode = 1

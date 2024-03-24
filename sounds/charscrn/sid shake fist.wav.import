@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dtq5ivy2r3wgm"
+path="res://.godot/imported/sid shake fist.wav-b9827236bb6bd9bde48eb50973196ef5.sample"
+
+[deps]
+
+source_file="res://sounds/charscrn/sid shake fist.wav"
+dest_files=["res://.godot/imported/sid shake fist.wav-b9827236bb6bd9bde48eb50973196ef5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

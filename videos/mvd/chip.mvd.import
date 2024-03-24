@@ -1,0 +1,15 @@
+[remap]
+
+importer="openlsr.mvd"
+type="SpriteFrames"
+uid="uid://xpsql6lj5cj0"
+path="res://.godot/imported/chip.mvd-00ab2fbf7fad1585f6d7c545a15d620b.res"
+
+[deps]
+
+source_file="res://videos/mvd/chip.mvd"
+dest_files=["res://.godot/imported/chip.mvd-00ab2fbf7fad1585f6d7c545a15d620b.res"]
+
+[params]
+
+myOption=false

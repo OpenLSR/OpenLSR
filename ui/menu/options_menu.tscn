@@ -1,0 +1,394 @@
+[gd_scene load_steps=45 format=3 uid="uid://b0hkquqd24f6b"]
+
+[ext_resource type="Script" path="res://ui/menu/options_menu.gd" id="1_pskmn"]
+[ext_resource type="Texture2D" uid="uid://dqdd2vr2m83rt" path="res://_ref/gameplay04.png" id="2_kqhiq"]
+[ext_resource type="Texture2D" uid="uid://bhjbme2acwwu1" path="res://textures/ui/op/op8back.tga" id="3_bv6t6"]
+[ext_resource type="Texture2D" uid="uid://dwlcj0bbo3qwo" path="res://textures/ui/su/su8_back.tga" id="4_k685e"]
+[ext_resource type="PackedScene" uid="uid://bfmiqy0m77420" path="res://ui/elements/label_frame.tscn" id="5_4xhoi"]
+[ext_resource type="PackedScene" uid="uid://du18yi1kptpxv" path="res://ui/elements/buttons/frame/back_button.tscn" id="6_ooaui"]
+[ext_resource type="Texture2D" uid="uid://d3r7avb1cb50j" path="res://textures/ui/op/opbar.png" id="7_0yxpm"]
+[ext_resource type="Texture2D" uid="uid://bir3kvls2mr17" path="res://textures/ui/frame/buttons/openlsr.png" id="7_jvqiv"]
+[ext_resource type="Theme" uid="uid://bvul8rcpdypaq" path="res://ui/elements/theme_test.tres" id="7_o1d73"]
+[ext_resource type="FontFile" uid="uid://bcux62hxfyncl" path="res://fonts/Balonxb.ttf" id="8_dqswa"]
+[ext_resource type="Texture2D" uid="uid://b7wdlw63y6ks4" path="res://textures/ui/frame/buttons/openlsr_pressed.png" id="8_rbq44"]
+[ext_resource type="Texture2D" uid="uid://bqyl1i22utcid" path="res://textures/ui/frame/buttons/openlsr_hover.png" id="9_d4gss"]
+[ext_resource type="Texture2D" uid="uid://mana058y8nkc" path="res://textures/ui/op/opslider.png" id="9_ehir2"]
+[ext_resource type="Texture2D" uid="uid://bigty6l004qyq" path="res://textures/ui/op/opslider_hover.png" id="10_hyqb4"]
+[ext_resource type="Texture2D" uid="uid://c6i6luchdt1ng" path="res://textures/ui/op/opbuttons.png" id="11_qj4q7"]
+[ext_resource type="ButtonGroup" uid="uid://cv67p76y7r6pb" path="res://ui/elements/buttons/vfx_button_group.tres" id="12_5iihe"]
+[ext_resource type="Texture2D" uid="uid://ch6oi70s7ais5" path="res://textures/ui/op/controls/op8uvidlo.tga" id="13_kxryp"]
+[ext_resource type="Texture2D" uid="uid://b4hrl2svp0tpi" path="res://textures/ui/op/controls/op8dvidlo.tga" id="14_r11w2"]
+[ext_resource type="Texture2D" uid="uid://4chwp60g7gd7" path="res://textures/ui/op/controls/op8gvidlo.tga" id="15_5jpf3"]
+[ext_resource type="Texture2D" uid="uid://c3ep3autk1vod" path="res://textures/ui/op/controls/op8uvidmd.tga" id="16_waed7"]
+[ext_resource type="Texture2D" uid="uid://m02ko6mcw4cc" path="res://textures/ui/op/controls/op8dvidmd.tga" id="17_4yg6e"]
+[ext_resource type="Texture2D" uid="uid://b7ytdbs7fdpfk" path="res://textures/ui/op/controls/op8gvidmd.tga" id="18_05qmd"]
+[ext_resource type="Texture2D" uid="uid://bgp32b1ppengx" path="res://textures/ui/op/controls/op8uvidhi.tga" id="19_qav1r"]
+[ext_resource type="Texture2D" uid="uid://dk007t7j87bdi" path="res://textures/ui/op/controls/op8dvidhi.tga" id="20_kfxvi"]
+[ext_resource type="Texture2D" uid="uid://doihl6k8gu6wg" path="res://textures/ui/op/controls/op8gvidhi.tga" id="21_ct15a"]
+[ext_resource type="Script" path="res://ui/menu/res_button_temp.gd" id="22_ektci"]
+[ext_resource type="Texture2D" uid="uid://b3poaa7004dpu" path="res://textures/ui/op/controls/op8uvid640.tga" id="22_mghp4"]
+[ext_resource type="Texture2D" uid="uid://f5tb0l775ct7" path="res://textures/ui/op/controls/op8dvid640.tga" id="23_d5m1l"]
+[ext_resource type="Texture2D" uid="uid://cvmuormwfo63l" path="res://textures/ui/op/controls/op8gvid640.tga" id="24_m6rwr"]
+[ext_resource type="Texture2D" uid="uid://cxhrdwn4bptld" path="res://textures/ui/op/controls/op8uvid800.tga" id="25_yuhlg"]
+[ext_resource type="Texture2D" uid="uid://tgbv8oeeg7g3" path="res://textures/ui/op/controls/op8dvid800.tga" id="26_6k7gn"]
+[ext_resource type="Texture2D" uid="uid://c6hh161fotp0w" path="res://textures/ui/op/controls/op8gvid800.tga" id="27_rvo2x"]
+[ext_resource type="Texture2D" uid="uid://c28b7ygdm5v4k" path="res://textures/ui/op/opcontrols.png" id="28_neko7"]
+[ext_resource type="Texture2D" uid="uid://bda6jam8014iu" path="res://textures/ui/op/config/op8ukey1.tga" id="29_c5ptp"]
+[ext_resource type="Texture2D" uid="uid://b1c86iojfcxkv" path="res://textures/ui/op/config/op8dkey1.tga" id="30_3ua0f"]
+[ext_resource type="Texture2D" uid="uid://bb2xrpt0ctmk8" path="res://textures/ui/op/config/op8ukey2.tga" id="31_epnnv"]
+[ext_resource type="Texture2D" uid="uid://bn5dvcmvt0akm" path="res://textures/ui/op/config/op8dkey2.tga" id="32_o1i8u"]
+[ext_resource type="Texture2D" uid="uid://dhniljspkysxa" path="res://textures/ui/op/config/op8ukey3.tga" id="33_7a3qx"]
+[ext_resource type="Texture2D" uid="uid://6tj0bqn1nmv7" path="res://textures/ui/op/config/op8dkey3.tga" id="34_oxmjx"]
+[ext_resource type="Texture2D" uid="uid://cx1h7ujynrgft" path="res://textures/ui/op/config/op8umouse.tga" id="35_osgc7"]
+[ext_resource type="Texture2D" uid="uid://bb7gb0gtbssb8" path="res://textures/ui/op/config/op8dmouse.tga" id="36_r4m5v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aytvw"]
+font = ExtResource("8_dqswa")
+font_size = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88837"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_34dh4"]
+font = ExtResource("8_dqswa")
+font_size = 15
+
+[node name="OptionsMenu" type="Control"]
+texture_filter = 3
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pskmn")
+
+[node name="Gameplay04" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("2_kqhiq")
+
+[node name="Op8Back" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("3_bv6t6")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_k685e")
+
+[node name="LabelFrame" parent="." instance=ExtResource("5_4xhoi")]
+layout_direction = 0
+layout_mode = 1
+
+[node name="Label" parent="LabelFrame/FrameLabelBox" index="0"]
+text = "OP_OPTITLE"
+
+[node name="BackButton" parent="LabelFrame" instance=ExtResource("6_ooaui")]
+layout_mode = 0
+
+[node name="OpenLSRButton" type="TextureButton" parent="LabelFrame"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -57.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 57.0
+grow_horizontal = 0
+tooltip_text = "Coming soon..."
+theme = ExtResource("7_o1d73")
+texture_normal = ExtResource("7_jvqiv")
+texture_pressed = ExtResource("8_rbq44")
+texture_hover = ExtResource("9_d4gss")
+
+[node name="SEVolumeBar" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -194.0
+offset_right = 202.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_0yxpm")
+
+[node name="Label" type="Label" parent="SEVolumeBar"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 17.0
+offset_right = 197.0
+offset_bottom = 45.0
+text = "OP_OPVOLUME"
+label_settings = SubResource("LabelSettings_aytvw")
+vertical_alignment = 1
+
+[node name="Slider" type="HSlider" parent="SEVolumeBar"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = -8.0
+offset_right = 388.0
+offset_bottom = 32.0
+theme_override_icons/grabber = ExtResource("9_ehir2")
+theme_override_icons/grabber_highlight = ExtResource("10_hyqb4")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_88837")
+value = 50.0
+
+[node name="MusicVolumeBar" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -124.0
+offset_right = 202.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_0yxpm")
+
+[node name="Label" type="Label" parent="MusicVolumeBar"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 17.0
+offset_right = 197.0
+offset_bottom = 45.0
+text = "OP_OPBALANCE"
+label_settings = SubResource("LabelSettings_aytvw")
+vertical_alignment = 1
+
+[node name="Slider" type="HSlider" parent="MusicVolumeBar"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = -8.0
+offset_right = 388.0
+offset_bottom = 32.0
+theme_override_icons/grabber = ExtResource("9_ehir2")
+theme_override_icons/grabber_highlight = ExtResource("10_hyqb4")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_88837")
+value = 50.0
+
+[node name="VideoEffectsButtons" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -54.0
+offset_right = 202.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_qj4q7")
+
+[node name="Label" type="Label" parent="VideoEffectsButtons"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 17.0
+offset_right = 197.0
+offset_bottom = 45.0
+text = "OP_OPEFFECTS"
+label_settings = SubResource("LabelSettings_aytvw")
+vertical_alignment = 1
+
+[node name="Low" type="TextureButton" parent="VideoEffectsButtons"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 14.0
+offset_right = 267.0
+offset_bottom = 49.0
+toggle_mode = true
+button_group = ExtResource("12_5iihe")
+texture_normal = ExtResource("13_kxryp")
+texture_pressed = ExtResource("14_r11w2")
+texture_hover = ExtResource("15_5jpf3")
+
+[node name="Medium" type="TextureButton" parent="VideoEffectsButtons"]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 14.0
+offset_right = 332.0
+offset_bottom = 49.0
+toggle_mode = true
+button_group = ExtResource("12_5iihe")
+texture_normal = ExtResource("16_waed7")
+texture_pressed = ExtResource("17_4yg6e")
+texture_hover = ExtResource("18_05qmd")
+
+[node name="High" type="TextureButton" parent="VideoEffectsButtons"]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 14.0
+offset_right = 397.0
+offset_bottom = 49.0
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("12_5iihe")
+texture_normal = ExtResource("19_qav1r")
+texture_pressed = ExtResource("20_kfxvi")
+texture_hover = ExtResource("21_ct15a")
+
+[node name="ResolutionButtons" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = 16.0
+offset_right = 202.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_qj4q7")
+script = ExtResource("22_ektci")
+
+[node name="Label" type="Label" parent="ResolutionButtons"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 17.0
+offset_right = 197.0
+offset_bottom = 45.0
+text = "OP_OPRESOLUTION"
+label_settings = SubResource("LabelSettings_aytvw")
+vertical_alignment = 1
+
+[node name="640x480" type="TextureButton" parent="ResolutionButtons"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 14.0
+offset_right = 302.0
+offset_bottom = 49.0
+texture_normal = ExtResource("22_mghp4")
+texture_pressed = ExtResource("23_d5m1l")
+texture_hover = ExtResource("24_m6rwr")
+
+[node name="800x600" type="TextureButton" parent="ResolutionButtons"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 14.0
+offset_right = 397.0
+offset_bottom = 49.0
+texture_normal = ExtResource("25_yuhlg")
+texture_pressed = ExtResource("26_6k7gn")
+texture_hover = ExtResource("27_rvo2x")
+
+[node name="ControlOptions" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = 86.0
+offset_right = 202.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_neko7")
+
+[node name="LabelPlayer1" type="Label" parent="ControlOptions"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 17.0
+offset_right = 97.0
+offset_bottom = 45.0
+text = "OP_OPPLAYER1"
+label_settings = SubResource("LabelSettings_34dh4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerControl1" type="TextureButton" parent="ControlOptions"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 52.0
+offset_right = 97.0
+offset_bottom = 142.0
+texture_normal = ExtResource("29_c5ptp")
+texture_pressed = ExtResource("30_3ua0f")
+
+[node name="LabelPlayer2" type="Label" parent="ControlOptions"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 17.0
+offset_right = 197.0
+offset_bottom = 45.0
+text = "OP_OPPLAYER2"
+label_settings = SubResource("LabelSettings_34dh4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerControl2" type="TextureButton" parent="ControlOptions"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 52.0
+offset_right = 197.0
+offset_bottom = 142.0
+texture_normal = ExtResource("31_epnnv")
+texture_pressed = ExtResource("32_o1i8u")
+
+[node name="LabelPlayer3" type="Label" parent="ControlOptions"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 17.0
+offset_right = 297.0
+offset_bottom = 45.0
+text = "OP_OPPLAYER3"
+label_settings = SubResource("LabelSettings_34dh4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerControl3" type="TextureButton" parent="ControlOptions"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 52.0
+offset_right = 297.0
+offset_bottom = 142.0
+texture_normal = ExtResource("33_7a3qx")
+texture_pressed = ExtResource("34_oxmjx")
+
+[node name="LabelPlayer4" type="Label" parent="ControlOptions"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 17.0
+offset_right = 397.0
+offset_bottom = 45.0
+text = "OP_OPPLAYER4"
+label_settings = SubResource("LabelSettings_34dh4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerControl4" type="TextureButton" parent="ControlOptions"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 52.0
+offset_right = 397.0
+offset_bottom = 142.0
+texture_normal = ExtResource("35_osgc7")
+texture_pressed = ExtResource("36_r4m5v")
+
+[connection signal="pressed" from="LabelFrame/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ResolutionButtons/640x480" to="ResolutionButtons" method="_on_640_pressed"]
+[connection signal="pressed" from="ResolutionButtons/800x600" to="ResolutionButtons" method="_on_800_pressed"]
+
+[editable path="LabelFrame"]
+[editable path="LabelFrame/FrameLabelBox"]

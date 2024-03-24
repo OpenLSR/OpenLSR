@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bhl245klhn41b"
+path="res://.godot/imported/chbroll.wav-fd67a1f0f7411e8802c4dc2f16d8d1b0.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/avatars/chip/chbroll.wav"
+dest_files=["res://.godot/imported/chbroll.wav-fd67a1f0f7411e8802c4dc2f16d8d1b0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

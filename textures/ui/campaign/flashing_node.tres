@@ -1,0 +1,11 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://buswitr856oh2"]
+
+[ext_resource type="Texture2D" uid="uid://dy4xwy6xe5unf" path="res://textures/ui/campaign/node.png" id="1_v3455"]
+[ext_resource type="Texture2D" uid="uid://bscodqi7tovdm" path="res://textures/ui/campaign/node_urgent.png" id="2_my521"]
+
+[resource]
+frames = 2
+frame_0/texture = ExtResource("1_v3455")
+frame_0/duration = 0.3
+frame_1/texture = ExtResource("2_my521")
+frame_1/duration = 0.3

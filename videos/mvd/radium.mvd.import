@@ -1,0 +1,15 @@
+[remap]
+
+importer="openlsr.mvd"
+type="SpriteFrames"
+uid="uid://kv2fsb300pv0"
+path="res://.godot/imported/radium.mvd-5fbfc54e4694ae4938c42da44ba29cbb.res"
+
+[deps]
+
+source_file="res://videos/mvd/radium.mvd"
+dest_files=["res://.godot/imported/radium.mvd-5fbfc54e4694ae4938c42da44ba29cbb.res"]
+
+[params]
+
+myOption=false

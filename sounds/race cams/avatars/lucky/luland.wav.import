@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bemx85lly6v2a"
+path="res://.godot/imported/luland.wav-fa111085d46b2d6aac373ce2c02023fd.sample"
+
+[deps]
+
+source_file="res://sounds/race cams/avatars/lucky/luland.wav"
+dest_files=["res://.godot/imported/luland.wav-fa111085d46b2d6aac373ce2c02023fd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

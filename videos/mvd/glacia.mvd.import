@@ -1,0 +1,15 @@
+[remap]
+
+importer="openlsr.mvd"
+type="SpriteFrames"
+uid="uid://cr4k5ckuhq278"
+path="res://.godot/imported/glacia.mvd-f8eb1e5fe236a50641f8a9d5bb57b395.res"
+
+[deps]
+
+source_file="res://videos/mvd/glacia.mvd"
+dest_files=["res://.godot/imported/glacia.mvd-f8eb1e5fe236a50641f8a9d5bb57b395.res"]
+
+[params]
+
+myOption=false
