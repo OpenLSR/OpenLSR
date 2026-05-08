@@ -1,3 +1,5 @@
+// injector.cpp - adapted from https://github.com/trigger-segfault/OpenLRR/ injector
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -6,6 +8,10 @@
 #include <string>
 
 #define EXE_NAME _T("_msr.exe")
+
+#define PROCESS_EIP 0x4FFCE8
+
+#define WAIT_TIME_MS 500
 
 #define nameof_(symbol) #symbol
 #define nameof(symbol) nameof_(symbol)
@@ -114,6 +120,43 @@ int BuildCommandLine(int argc, TCHAR* argv[], const tstring& FullPath, OUT tstri
     return 0;
 }
 
+int ConfirmEntryPoint(const tstring& FullPath, DWORD EntryPoint)
+{
+	IMAGE_DOS_HEADER dos;
+	IMAGE_NT_HEADERS32 nt32;
+	FILE* file;
+
+	if (!(file = _tfopen(FullPath.c_str(), _T("rb")))) {
+		_tprintf(_T("EXE fopen failed\n"));
+		return -1; // return here, we don't need to close the file
+	}
+
+	int result = 0;
+	if (!fread(&dos, sizeof(dos), 1, file)) {
+		_tprintf(_T("IMAGE_DOS_HEADER fread failed\n"));
+		result = -1;
+	}
+	else if (fseek(file, dos.e_lfanew, 0) != 0 || ftell(file) != dos.e_lfanew) {
+		_tprintf(_T("IMAGE_DOS_HEADER.e_lfanew fseek failed\n"));
+		result = -1;
+	}
+	else if (!fread(&nt32, sizeof(nt32), 1, file)) {
+		_tprintf(_T("IMAGE_NT_HEADERS32 fread failed\n"));
+		result = -1;
+	}
+	else {
+		DWORD nt32EntryPoint = nt32.OptionalHeader.AddressOfEntryPoint + nt32.OptionalHeader.ImageBase;
+		if (nt32EntryPoint != EntryPoint) {
+			_tprintf(_T("nt32EntryPoint != EntryPoint\n"));
+			_tprintf(_T("Found 0x%08x, but expected 0x%08x\n"), nt32EntryPoint, EntryPoint);
+			result = -1;
+		}
+	}
+
+	fclose(file);
+	return result;
+}
+
 int _tmain(int argc, TCHAR* argv[])
 {
     PROCESS_INFORMATION procInfo = { 0 };
@@ -131,6 +174,12 @@ int _tmain(int argc, TCHAR* argv[])
     _tprintf(_T("fullPath=%s\n"), fullPath.c_str());
     _tprintf(_T("workingDir=%s\n"), workingDir.c_str());
 
+	// Check just in-case the user isn't running the right version of LSR
+	if ((r = ConfirmEntryPoint(fullPath, PROCESS_EIP)) != 0) {
+		MessageBoxW(NULL, L"EXE check failed!\nOpenLSR requires _msr.exe version 0.3.5.1!", L"OpenLSR Injector", MB_ICONERROR);
+		return r;
+	}
+
     // We need to pass all arguments through OpenLSR.exe into _msr.exe, handle escaping here.
     // fullPath is added as the first argument.
     if ((r = BuildCommandLine(argc, argv, fullPath, commandLine)) != 0) {
@@ -141,32 +190,34 @@ int _tmain(int argc, TCHAR* argv[])
     LPTSTR cmdLine = new TCHAR[commandLine.length() + 1];
     _tcscpy(cmdLine, commandLine.c_str());
 
-    if (!CreateProcessW(EXE_NAME, cmdLine, NULL, NULL, FALSE,
-        CREATE_SUSPENDED, NULL, workingDir.c_str(), &startInfo, &procInfo))
+	// Allocate this because CreateProcess expects a non-const lpCommandLine argument,
+	// Let's play it safe and assume this isn't just a joke.
+    if (!CreateProcessW(EXE_NAME, cmdLine, NULL, NULL, FALSE, CREATE_SUSPENDED, NULL, workingDir.c_str(), &startInfo, &procInfo))
     {
-        MessageBoxW(NULL, L"Could not launch game process", L"OpenLSR Injector", MB_ICONERROR);
+        MessageBoxW(NULL, L"Could not launch game process!", L"OpenLSR Injector", MB_ICONERROR);
         return -1;
     }
+	delete[] cmdLine;
 
-	_tprintf(_T("created suspended process!"));
+	_tprintf(_T("created suspended process!\n"));
 
-	//BYTE eipBackup[2] = { 0 };
+	BYTE eipBackup[2] = { 0 };
 
-	//if (!ReadProcessMemory(procInfo.hProcess, (LPVOID)0x4FFCE9, &eipBackup, sizeof(eipBackup), NULL)) {
-	//	_tprintf(_T("EIP Backup failed\n"));
-	//	return (-1);
-	//}
+	if (!ReadProcessMemory(procInfo.hProcess, (LPVOID)PROCESS_EIP, &eipBackup, sizeof(eipBackup), NULL)) {
+		_tprintf(_T("EIP Backup failed\n"));
+		return (-1);
+	}
 
-	//_tprintf(_T("EIP Backup OK\n"));
+	_tprintf(_T("EIP Backup OK\n"));
 
-	//static constexpr const BYTE eipPatch[2] = { 0xEB, 0xFE };    // infinite jmp to itself
+	static constexpr const BYTE eipPatch[2] = { 0xEB, 0xFE };    // infinite jmp to itself
 
-	//if (!WriteProcessMemory(procInfo.hProcess, (LPVOID)0x4FFCE9, &eipPatch, sizeof(eipPatch), NULL)) {
-	//	_tprintf(_T("EIP Patch failed\n"));
-	//	return (-1);
-	//}
+	if (!WriteProcessMemory(procInfo.hProcess, (LPVOID)PROCESS_EIP, &eipPatch, sizeof(eipPatch), NULL)) {
+		_tprintf(_T("EIP Patch failed\n"));
+		return (-1);
+	}
 
-	//_tprintf(_T("EIP Patch OK\n"));
+	_tprintf(_T("EIP Patch OK\n"));
 
 	if (ResumeThread(procInfo.hThread) == (DWORD)-1) {
 		_tprintf(_T("ResumeThread failed\n"));
@@ -185,15 +236,13 @@ int _tmain(int argc, TCHAR* argv[])
 
 	static constexpr LPCTSTR dllPathBuf = _T("OpenLSR.dll");
 
-	const LPVOID vAllocMem = ::VirtualAllocEx(procInfo.hProcess, NULL, tstrsizeof(dllPathBuf),
-		MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);
+	const LPVOID vAllocMem = ::VirtualAllocEx(procInfo.hProcess, NULL, tstrsizeof(dllPathBuf), MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);
 	if (!vAllocMem) {
 		_tprintf(_T("VirtualAllocEx failed\n"));
 		return (-1);
 	}
 
 	_tprintf(_T("VirtualAllocEx OK\n"));
-
 
 	if (!::WriteProcessMemory(procInfo.hProcess, vAllocMem, dllPathBuf, tstrsizeof(dllPathBuf), NULL)) {
 		_tprintf(_T("WriteProcessMemory failed\n"));
@@ -209,4 +258,18 @@ int _tmain(int argc, TCHAR* argv[])
 	}
 
 	_tprintf(_T("CreateRemoteThread OK\n"));
+
+	_tprintf(_T("Waiting %dms for program... "), WAIT_TIME_MS);
+	::Sleep(WAIT_TIME_MS); // wait for hooks to initialize
+	_tprintf(_T("OK\n"));
+
+	_tprintf(_T("Restoring EIP... "));
+	if (!::WriteProcessMemory(procInfo.hProcess, (LPVOID)PROCESS_EIP, &eipBackup, sizeof(eipBackup), NULL)) {
+		_tprintf(_T("Failed\n"));
+	}
+	else {
+		_tprintf(_T("OK\n"));
+	}
+
+	return 0;
 }

@@ -148,19 +148,19 @@ void WINAPI outputDebug(LPCSTR lpOutputString) {
 struct CCommandLineParser_t {
     void** vtable;
     bool files; // try to load files from remote server
-    bool debugInfo; // various debug things
+    bool debug_info; // various debug things
     bool field3_0x6;
     bool field4_0x7;
     bool field5_0x8;
-    bool logFPSDebug; // logs framerate into CEngineMan logger [NO FLAG]
+    bool log_FPS_debug; // logs framerate into CEngineMan logger [NO FLAG]
     bool windowed; // windowed mode, broken
     bool field8_0xb;
     bool field9_0xc;
-    bool hardware3DSoundDisabled; // force disables hardware 3D sound support in QMDX [NO FLAG]
+    bool hardware_3D_sound_disabled; // force disables hardware 3D sound support in QMDX [NO FLAG]
     bool field11_0xe;
     bool field12_0xf;
     int field13_0x10;
-    bool nextNodeDebug; // highlight next node with sparkles [NO FLAG]
+    bool next_node_debug; // highlight next node with sparkles [NO FLAG]
     bool freeform; // allow full car control
     bool field16_0x16; // shows lap camera and any key causes race to end??? might be setting race state [NO FLAG]
     bool field17_0x17;
@@ -170,14 +170,14 @@ struct CCommandLineParser_t {
     bool field21_0x1b; // tries to update a viewport instead of using device flip [NO FLAG]
     int field22_0x1c;
     bool field23_0x20; // something to do with a max plastic help sound??? [NO FLAG]
-    bool igTest; // more debug stuff
-    bool soundDisabled; // sound disabled [NO FLAG]
+    bool ig_test; // more debug stuff
+    bool sound_disabled; // sound disabled [NO FLAG]
     bool field26_0x23;
     bool field27_0x24;
     bool field28_0x25; // all cars get frozen in place, idk [NO FLAG]
     bool field29_0x26; // disables vehicle collisions [NO FLAG]
-    bool aiDisabled; // disable AI drivers [NO FLAG]
-    bool field31_0x28; // not sure [NO FLAG]
+    bool ai_disabled; // disable AI drivers [NO FLAG]
+    bool preload_mvd; // preload MVD videos [NO FLAG]
     bool field32_0x29; // cars go really fast? [NO FLAG]
     bool field33_0x2a; // does something with car object [NO FLAG]
     bool res2; // something to do with resources
@@ -187,35 +187,103 @@ struct CCommandLineParser_t {
     bool field38_0x2f;
     bool field39_0x30; // does something to AI logic [NO FLAG]
     bool field40_0x31;
-    bool printerDisabled; // printer disabled [NO FLAG]
-    bool loadText;
+    bool printer_disabled; // printer disabled [NO FLAG]
+    bool load_text;
     bool field43_0x34;
     bool field44_0x35; // something related to the performance monitor [NO FLAG]
     bool res1; // something to do with resources
-    bool noIntroVideo; // skip intro videos
-    bool cdIn;
-    bool fromLauncher;
-    bool allAI;
+    bool no_intro_video; // skip intro videos
+    bool cd_in;
+    bool from_launcher;
+    bool all_ai;
     bool field50_0x3b;
 };
 
-typedef void(__thiscall* Parse_t)(CCommandLineParser_t*);
+typedef void(__thiscall* Parse_t)(CCommandLineParser_t*, void*, void*);
 
 Parse_t fpParse = nullptr;
 
 CCommandLineParser_t* cmdArgs = nullptr;
 
-void __fastcall parseHook(CCommandLineParser_t* parser) {
-    parser->fromLauncher = true;
-    parser->noIntroVideo = true;
-    parser->printerDisabled = true;
+void __fastcall parseHook(CCommandLineParser_t* parser, void* _EBX, void* param_1, void* param_2) {
+    // weird string structure thing
+    char* cmd = *(char**)((int)(&param_2) + 0x4);
+
+    if ((int)cmd == 0)
+        cmd == ((char*(*)(void))0x0040d4c0)();
+
+    std::printf("using new command line parser...\ncmd: %s\n", cmd);
+
+    // parse original command line options
+    if(strstr(cmd, "/FILES") != NULL) {
+        parser->files = true;
+    }
+    if(strstr(cmd, "/DEBUGINFO") != NULL) {
+        parser->debug_info = true;
+    }
+    if(strstr(cmd, "/WINDOWED") != NULL) {
+        parser->windowed = true;
+    }
+    *((bool*)0x0053b984) = true;
+    if(strstr(cmd, "/FREEFORM") != NULL) {
+        parser->freeform = true;
+    }
+    if(strstr(cmd, "RESTART") != NULL) {
+        parser->restart = true;
+    }
+    if(strstr(cmd, "/LOAD_TEXT") != NULL) {
+        parser->load_text = true;
+    }
+    if(strstr(cmd, "/RES_FILES") != NULL) {
+        parser->res1 = true;
+        parser->res2 = true;
+    }
+    if(strstr(cmd, "/IGTEST") != NULL) {
+        parser->ig_test = true;
+    }
+    if(strstr(cmd, "/XAFTOXBF") != NULL) {
+        parser->xaf2xbf = true;
+    }
+    if(strstr(cmd, "/NORES") != NULL) {
+        parser->res1 = false;
+        parser->res2 = false;
+    }
+    if(strstr(cmd, "/NOINTROVIDEO") != NULL) {
+        parser->no_intro_video = true;
+    }
+    if(strstr(cmd, "/CDIN") != NULL) {
+        parser->cd_in = false;
+    }
+    if(strstr(cmd, "/FROMLAUNCHER") != NULL) {
+        parser->from_launcher = true;
+    }
+    if(strstr(cmd, "/ALLAI") != NULL) {
+        parser->all_ai = true;
+    }
+    
+    parser->field36_0x2d = true;
+
+    // new options
+
+    // OpenLSR always on options
+    parser->from_launcher = true;
+    parser->printer_disabled = true;
+
+    if (strstr(cmd, "/NODEDEBUG") != NULL) {
+        parser->next_node_debug = true;
+    }
+    if (strstr(cmd, "/") != NULL) {
+        parser->cd_in = false;
+    }
+
+    //parser->no_intro_video = true;
     //parser->igTest = true;
-    parser->debugInfo = true;
+    //parser->debug_info = true;
 
     //parser->freeform = true;
     
     // new stuff
-    parser->nextNodeDebug = true;
+    //parser->next_node_debug = true;
     //parser->lapCameraDebug = true;
     //parser->logFPSDebug = true;
     //parser->hardware3DSoundDisabled = true;
@@ -225,6 +293,7 @@ void __fastcall parseHook(CCommandLineParser_t* parser) {
     //parser->field28_0x25 = true;
     //parser->field29_0x26 = true;
     //parser->field44_0x35 = true;
+    //parser->field5_0x8 = true;
 
     //parser->windowed = true;
 
@@ -256,9 +325,11 @@ HWND WINAPI createWindow(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowNam
     return win;
 }
 
-// hack from hell, probably should just hook registry calls in advapi
-void hkcuPatch() {
-    int* ptr = reinterpret_cast<int*>(0x4155c6);
+// redirect registry writes from HKLM to HKCU and to an OpenLSR registry key (for now)
+void regPatch() {
+    const char* regKey = "Software\\OpenLSR Team\\OpenLSR";
+
+    int* ptr = reinterpret_cast<int*>(0x004155c6);
 
     DWORD oldProtect;
 
@@ -268,32 +339,42 @@ void hkcuPatch() {
         VirtualProtect(ptr, sizeof(int), oldProtect, &oldProtect);
     }
 
-    ptr = reinterpret_cast<int*>(0x4157c8);
+    ptr = reinterpret_cast<int*>(0x004157c8);
 
     if (VirtualProtect(ptr, sizeof(int), PAGE_EXECUTE_READWRITE, &oldProtect)) {
         *ptr = 0x80000001;
 
         VirtualProtect(ptr, sizeof(int), oldProtect, &oldProtect);
     }
-}
 
-// this will likely break things
-// TODO: rewrite controller logic to only fetch things we care about?
-void controllerPatch() {
-    byte* ptr = reinterpret_cast<byte*>(0x004657dc);
+    char** ptr2 = reinterpret_cast<char**>(0x004155d7);
 
-    DWORD oldProtect;
+    if (VirtualProtect(ptr2, sizeof(char*), PAGE_EXECUTE_READWRITE, &oldProtect)) {
+        *ptr2 = (char*)regKey;
 
-    if (VirtualProtect(ptr, sizeof(byte), PAGE_EXECUTE_READWRITE, &oldProtect)) {
-        // it expects both mouse and keyboard, this won't work
-        //*ptr = DI8DEVCLASS_KEYBOARD; 
+        VirtualProtect(ptr2, sizeof(char*), oldProtect, &oldProtect);
+    }
 
-        VirtualProtect(ptr, sizeof(byte), oldProtect, &oldProtect);
+    ptr2 = reinterpret_cast<char**>(0x004157d9);
+
+    if (VirtualProtect(ptr2, sizeof(char*), PAGE_EXECUTE_READWRITE, &oldProtect)) {
+        *ptr2 = (char*)regKey;
+
+        VirtualProtect(ptr2, sizeof(char*), oldProtect, &oldProtect);
+    }
+
+    ptr2 = reinterpret_cast<char**>(0x004158cd);
+
+    if (VirtualProtect(ptr2, sizeof(char*), PAGE_EXECUTE_READWRITE, &oldProtect)) {
+        *ptr2 = (char*)regKey;
+
+        VirtualProtect(ptr2, sizeof(char*), oldProtect, &oldProtect);
     }
 }
 
+// replace the font used in the game with another system font
 void fontPatch(const char* font) {
-    char** ptr = reinterpret_cast<char**>(0x4161a9);
+    char** ptr = reinterpret_cast<char**>(0x004161a9);
 
     DWORD oldProtect;
 
@@ -303,7 +384,7 @@ void fontPatch(const char* font) {
         VirtualProtect(ptr, sizeof(char*), oldProtect, &oldProtect);
     }
 
-    ptr = reinterpret_cast<char**>(0x4161e3);
+    ptr = reinterpret_cast<char**>(0x004161e3);
 
     if (VirtualProtect(ptr, sizeof(char*), PAGE_EXECUTE_READWRITE, &oldProtect)) {
         *ptr = (char*)font;
@@ -311,7 +392,7 @@ void fontPatch(const char* font) {
         VirtualProtect(ptr, sizeof(char*), oldProtect, &oldProtect);
     }
 
-    ptr = reinterpret_cast<char**>(0x41621d);
+    ptr = reinterpret_cast<char**>(0x0041621d);
 
     if (VirtualProtect(ptr, sizeof(char*), PAGE_EXECUTE_READWRITE, &oldProtect)) {
         *ptr = (char*)font;
@@ -319,7 +400,7 @@ void fontPatch(const char* font) {
         VirtualProtect(ptr, sizeof(char*), oldProtect, &oldProtect);
     }
 
-    ptr = reinterpret_cast<char**>(0x416257);
+    ptr = reinterpret_cast<char**>(0x00416257);
 
     if (VirtualProtect(ptr, sizeof(char*), PAGE_EXECUTE_READWRITE, &oldProtect)) {
         *ptr = (char*)font;
@@ -342,57 +423,28 @@ void carSwitchPatch() {
     }
 }
 
-struct CIODevice {
-    GUID    guidInstance;
-    GUID    guidProduct;
-    DWORD   devType;
-    CHAR    devName[MAX_PATH];
-};
-
-typedef BOOL(WINAPI* ControllerCallback_t)(void*, void*);
+typedef BOOL(WINAPI* ControllerCallback_t)(LPCDIDEVICEINSTANCEA, void*);
 
 ControllerCallback_t fpControllerCallback = nullptr;
 
-BOOL WINAPI controllerCallback(void* param_1, void* param_2) {
-    std::printf("device: %s, type: %X\n", (char*)((int)param_1 + 0x28), ((int)param_1 + 0x24));
+BOOL WINAPI controllerCallback(LPCDIDEVICEINSTANCEA lpddi, void* param_2) {
+    // filter out "DEVICE" type devices, we don't care about those.
+    if ((lpddi->dwDevType & 7) == 1) {
+        //std::printf("unsupported device %s, skipping...\n", lpddi->tszInstanceName);
+        return 1;
+    }
+    else {
+        std::printf("device: %s, type: %X\n", lpddi->tszInstanceName, lpddi->dwDevType);
+    }
 
-    return fpControllerCallback(param_1, param_2);
-    //DI8DEVTYPE1STPERSON_LIMITED
+    return fpControllerCallback(lpddi, param_2);
 }
-
-/*
-
-int controller_callback(void *param_1,void *param_2)
-
-{
-  undefined4 *local_10;
-  undefined4 *local_8;
-
-  local_10 = (undefined4 *)operator_new(0x10);
-  if (local_10 == (undefined4 *)0x0) {
-    local_10 = (undefined4 *)0x0;
-  }
-  else {
-    *local_10 = *(undefined4 *)((int)param_1 + 4);
-    local_10[1] = *(undefined4 *)((int)param_1 + 8);
-    local_10[2] = *(undefined4 *)((int)param_1 + 0xc);
-    local_10[3] = *(undefined4 *)((int)param_1 + 0x10);
-  }
-  local_8 = local_10;
-  if (local_10 != (undefined4 *)0x0) {
-    FUN_00466050(&DAT_0053bb10,&local_8);
-  }
-  return 1;
-}
-
-*/
 
 typedef int(WINAPI* CheckDirectX_t)(void);
 
 CheckDirectX_t fpCheckDirectX = nullptr;
 
 int WINAPI checkDirectX() {
-    MessageBoxA(nullptr, "Hi, the early hooks worked properly\n\ncommand line args ignored.", "OpenLSR", MB_OK);
     return 0;
 }
 
@@ -400,9 +452,6 @@ int WINAPI checkDirectX() {
 if(MH_CreateHook(target, detour, original) != MH_OK) {\
     std::printf("failed to create hook for %s", name);\
     logFile << "failed to create hook for " << name << std::endl;\
-} else if (MH_EnableHook(target) != MH_OK) {\
-    std::printf("failed to enable hook for %s", name);\
-    logFile << "failed to enable hook for " << name << std::endl;\
 }
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
@@ -415,10 +464,16 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
 
         if (!CreateConsole()) return FALSE;
 
+        std::printf("hooking, please wait!\r");
+
         if (!logFile.is_open()) {
             std::printf("failed to open debug_log.txt");
             return FALSE;
         }
+
+        AddHook("check directx", (LPVOID)0x00411d12, &checkDirectX, reinterpret_cast<LPVOID*>(&fpCheckDirectX));
+
+        AddHook("command line parse hook", (LPVOID)0x00435a3e, &parseHook, reinterpret_cast<LPVOID*>(&fpParse));
 
         #pragma region Logging
 
@@ -452,17 +507,15 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
 
         #pragma endregion
 
+        #pragma region Fixes
+
+        AddHook("ignore invalid IO devices", (LPVOID)0x00465cdb, &controllerCallback, reinterpret_cast<LPVOID*>(&fpControllerCallback));
+
+        #pragma endregion
+
         #pragma region Experiments
 
-        AddHook("command line parse hook", (LPVOID)0x00435a3e, &parseHook, reinterpret_cast<LPVOID*>(&fpParse));
-
-        AddHook("controller", (LPVOID)0x00465cdb, &controllerCallback, reinterpret_cast<LPVOID*>(&fpControllerCallback));
-
-        AddHook("check directx", (LPVOID)0x00411d12, &checkDirectX, reinterpret_cast<LPVOID*>(&fpCheckDirectX));
-
-        hkcuPatch();
-
-        controllerPatch();
+        regPatch();
         
         // this is a reminder that i have it injected
         fontPatch("Comic Sans MS");
@@ -470,6 +523,8 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
         carSwitchPatch();
 
         #pragma endregion
+
+        MH_EnableHook(MH_ALL_HOOKS);
     }
     else if (ul_reason_for_call == DLL_PROCESS_DETACH) {
         logFile.close();
