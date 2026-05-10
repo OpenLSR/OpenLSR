@@ -144,7 +144,6 @@ void WINAPI outputDebug(LPCSTR lpOutputString) {
     logFile << lpOutputString << std::endl;
 }
 
-
 struct CCommandLineParser_t {
     void** vtable;
     bool files; // try to load files from remote server
@@ -214,66 +213,68 @@ void __fastcall parseHook(CCommandLineParser_t* parser, void* _EBX, void* param_
 
     std::printf("using new command line parser...\ncmd: %s\n", cmd);
 
-    // parse original command line options
-    if(strstr(cmd, "/FILES") != NULL) {
-        parser->files = true;
-    }
-    if(strstr(cmd, "/DEBUGINFO") != NULL) {
-        parser->debug_info = true;
-    }
-    if(strstr(cmd, "/WINDOWED") != NULL) {
-        parser->windowed = true;
-    }
-    *((bool*)0x0053b984) = true;
-    if(strstr(cmd, "/FREEFORM") != NULL) {
-        parser->freeform = true;
-    }
-    if(strstr(cmd, "RESTART") != NULL) {
-        parser->restart = true;
-    }
-    if(strstr(cmd, "/LOAD_TEXT") != NULL) {
-        parser->load_text = true;
-    }
-    if(strstr(cmd, "/RES_FILES") != NULL) {
-        parser->res1 = true;
-        parser->res2 = true;
-    }
-    if(strstr(cmd, "/IGTEST") != NULL) {
-        parser->ig_test = true;
-    }
-    if(strstr(cmd, "/XAFTOXBF") != NULL) {
-        parser->xaf2xbf = true;
-    }
-    if(strstr(cmd, "/NORES") != NULL) {
-        parser->res1 = false;
-        parser->res2 = false;
-    }
-    if(strstr(cmd, "/NOINTROVIDEO") != NULL) {
-        parser->no_intro_video = true;
-    }
-    if(strstr(cmd, "/CDIN") != NULL) {
-        parser->cd_in = false;
-    }
-    if(strstr(cmd, "/FROMLAUNCHER") != NULL) {
-        parser->from_launcher = true;
-    }
-    if(strstr(cmd, "/ALLAI") != NULL) {
-        parser->all_ai = true;
-    }
-    
     parser->field36_0x2d = true;
 
-    // new options
+    // not sure what this does yet
+    *((bool*)0x0053b984) = true;
 
     // OpenLSR always on options
     parser->from_launcher = true;
     parser->printer_disabled = true;
 
-    if (strstr(cmd, "/NODEDEBUG") != NULL) {
-        parser->next_node_debug = true;
-    }
-    if (strstr(cmd, "/") != NULL) {
-        parser->cd_in = false;
+    if ((int)cmd != NULL) {
+        // parse original command line options
+
+        if (strstr(cmd, "RESTART") != NULL) {
+            parser->restart = true;
+        }
+        if (strstr(cmd, "/FILES") != NULL) {
+            parser->files = true;
+        }
+        if (strstr(cmd, "/DEBUGINFO") != NULL) {
+            parser->debug_info = true;
+        }
+        if (strstr(cmd, "/WINDOWED") != NULL) {
+            parser->windowed = true;
+        }
+        if (strstr(cmd, "/FREEFORM") != NULL) {
+            parser->freeform = true;
+        }
+        if (strstr(cmd, "/LOAD_TEXT") != NULL) {
+            parser->load_text = true;
+        }
+        if (strstr(cmd, "/RES_FILES") != NULL) {
+            parser->res1 = true;
+            parser->res2 = true;
+        }
+        if (strstr(cmd, "/IGTEST") != NULL) {
+            parser->ig_test = true;
+        }
+        if (strstr(cmd, "/XAFTOXBF") != NULL) {
+            parser->xaf2xbf = true;
+        }
+        if (strstr(cmd, "/NORES") != NULL) {
+            parser->res1 = false;
+            parser->res2 = false;
+        }
+        if (strstr(cmd, "/NOINTROVIDEO") != NULL) {
+            parser->no_intro_video = true;
+        }
+        if (strstr(cmd, "/CDIN") != NULL) {
+            parser->cd_in = false;
+        }
+        if (strstr(cmd, "/FROMLAUNCHER") != NULL) {
+            parser->from_launcher = true;
+        }
+        if (strstr(cmd, "/ALLAI") != NULL) {
+            parser->all_ai = true;
+        }
+    
+        // new options
+
+        if (strstr(cmd, "/NODEDEBUG") != NULL) {
+            parser->next_node_debug = true;
+        }
     }
 
     //parser->no_intro_video = true;
@@ -413,7 +414,7 @@ void fontPatch(const char* font) {
 // this is NOT how you're supposed to be doing an assembly patch.
 void carSwitchPatch() {
     byte* ptr = reinterpret_cast<byte*>(0x004270bd);
-    byte newBytes[6] = {0xe9, 0xc1, 0x00, 0x00, 0x00, 0x90};
+    byte newBytes[6] = { 0xe9, 0xc1, 0x00, 0x00, 0x00, 0x90 };
 
     DWORD oldProtect;
 
@@ -446,6 +447,11 @@ CheckDirectX_t fpCheckDirectX = nullptr;
 
 int WINAPI checkDirectX() {
     return 0;
+}
+
+void __fastcall noRespawn(void* car_obj, void* _EBX, int param_1) {
+    std::printf("noRespawn triggered!\r");
+    return;
 }
 
 #define AddHook(name, target, detour, original) \
@@ -513,7 +519,9 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
 
         #pragma endregion
 
-        #pragma region Experiments
+        #pragma region Patches and Experiments
+
+        //AddHook("disable car respawn", (LPVOID)0x0042b5c9, &noRespawn, NULL);
 
         regPatch();
         
@@ -523,6 +531,8 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
         carSwitchPatch();
 
         #pragma endregion
+
+        // DO ALL PATCHES BEFORE ENABLING HOOKS
 
         MH_EnableHook(MH_ALL_HOOKS);
     }
